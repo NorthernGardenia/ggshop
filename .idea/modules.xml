@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gg-common/gg-common.iml" filepath="$PROJECT_DIR$/gg-common/gg-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-dao/gg-manager-dao.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-dao/gg-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-interface/gg-manager-interface.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-interface/gg-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-pojo/gg-manager-pojo.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-pojo/gg-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-service/gg-manager-service.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-service/gg-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-web/gg-manager-web.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-web/gg-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-parent/gg-parent.iml" filepath="$PROJECT_DIR$/gg-parent/gg-parent.iml" />
+    </modules>
+  </component>
+</project>

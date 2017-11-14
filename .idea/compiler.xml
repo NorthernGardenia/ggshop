@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gg-common" />
+        <module name="gg-manager-dao" />
+        <module name="gg-manager-interface" />
+        <module name="gg-manager-pojo" />
+        <module name="gg-manager-service" />
+        <module name="gg-manager-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dd-manager-interface" target="1.7" />
+      <module name="gg-common" target="1.7" />
+      <module name="gg-manager" target="1.7" />
+      <module name="gg-manager-dao" target="1.7" />
+      <module name="gg-manager-interface" target="1.7" />
+      <module name="gg-manager-pojo" target="1.7" />
+      <module name="gg-manager-service" target="1.7" />
+      <module name="gg-manager-web" target="1.7" />
+      <module name="gg-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
