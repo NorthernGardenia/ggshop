@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.ggshop.dao.IntegrationMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.ggshop.pojo.po.Integration" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="credit" property="credit" jdbcType="BIGINT" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="sbst1" property="sbst1" jdbcType="VARCHAR" />
+    <result column="sbst2" property="sbst2" jdbcType="VARCHAR" />
+    <result column="sbst3" property="sbst3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, credit, gmt_create, gmt_modified, operator, sbst1, sbst2, sbst3
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.ggshop.pojo.po.IntegrationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from integration
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from integration
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from integration
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.ggshop.pojo.po.IntegrationExample" >
+    delete from integration
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.ggshop.pojo.po.Integration" >
+    insert into integration (id, credit, gmt_create, 
+      gmt_modified, operator, sbst1, 
+      sbst2, sbst3)
+    values (#{id,jdbcType=BIGINT}, #{credit,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}, #{sbst1,jdbcType=VARCHAR}, 
+      #{sbst2,jdbcType=VARCHAR}, #{sbst3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.ggshop.pojo.po.Integration" >
+    insert into integration
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="credit != null" >
+        credit,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="sbst1 != null" >
+        sbst1,
+      </if>
+      <if test="sbst2 != null" >
+        sbst2,
+      </if>
+      <if test="sbst3 != null" >
+        sbst3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="credit != null" >
+        #{credit,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst1 != null" >
+        #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.ggshop.pojo.po.IntegrationExample" resultType="java.lang.Integer" >
+    select count(*) from integration
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update integration
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.credit != null" >
+        credit = #{record.credit,jdbcType=BIGINT},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.operator != null" >
+        operator = #{record.operator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst1 != null" >
+        sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst2 != null" >
+        sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst3 != null" >
+        sbst3 = #{record.sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update integration
+    set id = #{record.id,jdbcType=BIGINT},
+      credit = #{record.credit,jdbcType=BIGINT},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      operator = #{record.operator,jdbcType=VARCHAR},
+      sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      sbst3 = #{record.sbst3,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.ggshop.pojo.po.Integration" >
+    update integration
+    <set >
+      <if test="credit != null" >
+        credit = #{credit,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst1 != null" >
+        sbst1 = #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        sbst2 = #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        sbst3 = #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.ggshop.pojo.po.Integration" >
+    update integration
+    set credit = #{credit,jdbcType=BIGINT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      operator = #{operator,jdbcType=VARCHAR},
+      sbst1 = #{sbst1,jdbcType=VARCHAR},
+      sbst2 = #{sbst2,jdbcType=VARCHAR},
+      sbst3 = #{sbst3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

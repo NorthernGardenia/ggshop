@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.ggshop.dao.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.ggshop.pojo.po.Comment" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+    <result column="comment_user" property="commentUser" jdbcType="VARCHAR" />
+    <result column="c_content" property="cContent" jdbcType="VARCHAR" />
+    <result column="rep_content" property="repContent" jdbcType="VARCHAR" />
+    <result column="comment_time" property="commentTime" jdbcType="TIMESTAMP" />
+    <result column="rep_time" property="repTime" jdbcType="TIMESTAMP" />
+    <result column="sbst1" property="sbst1" jdbcType="VARCHAR" />
+    <result column="sbst2" property="sbst2" jdbcType="VARCHAR" />
+    <result column="sbst3" property="sbst3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, item_id, comment_user, c_content, rep_content, comment_time, rep_time, sbst1, 
+    sbst2, sbst3
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.ggshop.pojo.po.CommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from comment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.ggshop.pojo.po.CommentExample" >
+    delete from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.ggshop.pojo.po.Comment" >
+    insert into comment (id, item_id, comment_user, 
+      c_content, rep_content, comment_time, 
+      rep_time, sbst1, sbst2, 
+      sbst3)
+    values (#{id,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, #{commentUser,jdbcType=VARCHAR}, 
+      #{cContent,jdbcType=VARCHAR}, #{repContent,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP}, 
+      #{repTime,jdbcType=TIMESTAMP}, #{sbst1,jdbcType=VARCHAR}, #{sbst2,jdbcType=VARCHAR}, 
+      #{sbst3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.ggshop.pojo.po.Comment" >
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="itemId != null" >
+        item_id,
+      </if>
+      <if test="commentUser != null" >
+        comment_user,
+      </if>
+      <if test="cContent != null" >
+        c_content,
+      </if>
+      <if test="repContent != null" >
+        rep_content,
+      </if>
+      <if test="commentTime != null" >
+        comment_time,
+      </if>
+      <if test="repTime != null" >
+        rep_time,
+      </if>
+      <if test="sbst1 != null" >
+        sbst1,
+      </if>
+      <if test="sbst2 != null" >
+        sbst2,
+      </if>
+      <if test="sbst3 != null" >
+        sbst3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="itemId != null" >
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="commentUser != null" >
+        #{commentUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cContent != null" >
+        #{cContent,jdbcType=VARCHAR},
+      </if>
+      <if test="repContent != null" >
+        #{repContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="repTime != null" >
+        #{repTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sbst1 != null" >
+        #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.ggshop.pojo.po.CommentExample" resultType="java.lang.Integer" >
+    select count(*) from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update comment
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.itemId != null" >
+        item_id = #{record.itemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentUser != null" >
+        comment_user = #{record.commentUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cContent != null" >
+        c_content = #{record.cContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.repContent != null" >
+        rep_content = #{record.repContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentTime != null" >
+        comment_time = #{record.commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.repTime != null" >
+        rep_time = #{record.repTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sbst1 != null" >
+        sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst2 != null" >
+        sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst3 != null" >
+        sbst3 = #{record.sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update comment
+    set id = #{record.id,jdbcType=BIGINT},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      comment_user = #{record.commentUser,jdbcType=VARCHAR},
+      c_content = #{record.cContent,jdbcType=VARCHAR},
+      rep_content = #{record.repContent,jdbcType=VARCHAR},
+      comment_time = #{record.commentTime,jdbcType=TIMESTAMP},
+      rep_time = #{record.repTime,jdbcType=TIMESTAMP},
+      sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      sbst3 = #{record.sbst3,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.ggshop.pojo.po.Comment" >
+    update comment
+    <set >
+      <if test="itemId != null" >
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="commentUser != null" >
+        comment_user = #{commentUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cContent != null" >
+        c_content = #{cContent,jdbcType=VARCHAR},
+      </if>
+      <if test="repContent != null" >
+        rep_content = #{repContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="repTime != null" >
+        rep_time = #{repTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sbst1 != null" >
+        sbst1 = #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        sbst2 = #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        sbst3 = #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.ggshop.pojo.po.Comment" >
+    update comment
+    set item_id = #{itemId,jdbcType=BIGINT},
+      comment_user = #{commentUser,jdbcType=VARCHAR},
+      c_content = #{cContent,jdbcType=VARCHAR},
+      rep_content = #{repContent,jdbcType=VARCHAR},
+      comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      rep_time = #{repTime,jdbcType=TIMESTAMP},
+      sbst1 = #{sbst1,jdbcType=VARCHAR},
+      sbst2 = #{sbst2,jdbcType=VARCHAR},
+      sbst3 = #{sbst3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

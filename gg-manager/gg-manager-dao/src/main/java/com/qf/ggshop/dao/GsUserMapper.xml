@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.ggshop.dao.GsUserMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.ggshop.pojo.po.GsUser" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="is_admin" property="isAdmin" jdbcType="TINYINT" />
+    <result column="rank" property="rank" jdbcType="TINYINT" />
+    <result column="itg_id" property="itgId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="sbst1" property="sbst1" jdbcType="VARCHAR" />
+    <result column="sbst2" property="sbst2" jdbcType="VARCHAR" />
+    <result column="sbst3" property="sbst3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, username, password, phone, email, is_admin, rank, itg_id, status, address, gmt_create, 
+    gmt_modified, sbst1, sbst2, sbst3
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.ggshop.pojo.po.GsUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from gs_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from gs_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.ggshop.pojo.po.GsUserExample" >
+    delete from gs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.ggshop.pojo.po.GsUser" >
+    insert into gs_user (id, username, password, 
+      phone, email, is_admin, 
+      rank, itg_id, status, 
+      address, gmt_create, gmt_modified, 
+      sbst1, sbst2, sbst3
+      )
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{isAdmin,jdbcType=TINYINT}, 
+      #{rank,jdbcType=TINYINT}, #{itgId,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, 
+      #{address,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{sbst1,jdbcType=VARCHAR}, #{sbst2,jdbcType=VARCHAR}, #{sbst3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.ggshop.pojo.po.GsUser" >
+    insert into gs_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="isAdmin != null" >
+        is_admin,
+      </if>
+      <if test="rank != null" >
+        rank,
+      </if>
+      <if test="itgId != null" >
+        itg_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+      <if test="sbst1 != null" >
+        sbst1,
+      </if>
+      <if test="sbst2 != null" >
+        sbst2,
+      </if>
+      <if test="sbst3 != null" >
+        sbst3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isAdmin != null" >
+        #{isAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="rank != null" >
+        #{rank,jdbcType=TINYINT},
+      </if>
+      <if test="itgId != null" >
+        #{itgId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sbst1 != null" >
+        #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.ggshop.pojo.po.GsUserExample" resultType="java.lang.Integer" >
+    select count(*) from gs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update gs_user
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAdmin != null" >
+        is_admin = #{record.isAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="record.rank != null" >
+        rank = #{record.rank,jdbcType=TINYINT},
+      </if>
+      <if test="record.itgId != null" >
+        itg_id = #{record.itgId,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sbst1 != null" >
+        sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst2 != null" >
+        sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbst3 != null" >
+        sbst3 = #{record.sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update gs_user
+    set id = #{record.id,jdbcType=BIGINT},
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      is_admin = #{record.isAdmin,jdbcType=TINYINT},
+      rank = #{record.rank,jdbcType=TINYINT},
+      itg_id = #{record.itgId,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      address = #{record.address,jdbcType=VARCHAR},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      sbst1 = #{record.sbst1,jdbcType=VARCHAR},
+      sbst2 = #{record.sbst2,jdbcType=VARCHAR},
+      sbst3 = #{record.sbst3,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.ggshop.pojo.po.GsUser" >
+    update gs_user
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isAdmin != null" >
+        is_admin = #{isAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="rank != null" >
+        rank = #{rank,jdbcType=TINYINT},
+      </if>
+      <if test="itgId != null" >
+        itg_id = #{itgId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sbst1 != null" >
+        sbst1 = #{sbst1,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst2 != null" >
+        sbst2 = #{sbst2,jdbcType=VARCHAR},
+      </if>
+      <if test="sbst3 != null" >
+        sbst3 = #{sbst3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.ggshop.pojo.po.GsUser" >
+    update gs_user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      is_admin = #{isAdmin,jdbcType=TINYINT},
+      rank = #{rank,jdbcType=TINYINT},
+      itg_id = #{itgId,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      address = #{address,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      sbst1 = #{sbst1,jdbcType=VARCHAR},
+      sbst2 = #{sbst2,jdbcType=VARCHAR},
+      sbst3 = #{sbst3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
