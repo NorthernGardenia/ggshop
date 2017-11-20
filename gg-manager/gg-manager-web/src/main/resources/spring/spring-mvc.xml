@@ -6,10 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--1 扫描WEB层下注解类,可以扫描到base-package的当前包以及子包的所有注解类-->
-    <context:component-scan base-package="com.ycq.yyshop.web"/>
+    <context:component-scan base-package="com.qf.ggshop.web"/>
     <!--@RequestMapping @ResponseBody jackson转换成JSON-->
     <mvc:annotation-driven/>
 

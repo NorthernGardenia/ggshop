@@ -3,6 +3,7 @@ package com.qf.ggshop.dao;
 import com.qf.ggshop.pojo.po.Integration;
 import com.qf.ggshop.pojo.po.IntegrationExample;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface IntegrationMapper {

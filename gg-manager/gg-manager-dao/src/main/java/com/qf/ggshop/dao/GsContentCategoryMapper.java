@@ -3,6 +3,7 @@ package com.qf.ggshop.dao;
 import com.qf.ggshop.pojo.po.GsContentCategory;
 import com.qf.ggshop.pojo.po.GsContentCategoryExample;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface GsContentCategoryMapper {

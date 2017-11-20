@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>gg-parent</artifactId>
-        <groupId>com.shop.ggshop</groupId>
+        <groupId>com.qf.ggshop</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../gg-parent/pom.xml</relativePath>
     </parent>
@@ -13,7 +13,6 @@
     <modules>
         <module>gg-manager-pojo</module>
         <module>gg-manager-dao</module>
-        <module>dd-manager-interface</module>
         <module>gg-manager-interface</module>
         <module>gg-manager-service</module>
         <module>gg-manager-web</module>
@@ -22,7 +21,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.shop.ggshop</groupId>
+            <groupId>com.qf.ggshop</groupId>
             <artifactId>gg-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

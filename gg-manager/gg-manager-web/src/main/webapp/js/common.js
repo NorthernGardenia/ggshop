@@ -1,5 +1,5 @@
 
-var ddshop = {
+var ggshop = {
     //点击左侧导航树上的节点，添加选项卡
     registerMenuEvent:function(){
         //约定大于配置：jquery对象前面加上$,如果是DOM对象不需要加$
