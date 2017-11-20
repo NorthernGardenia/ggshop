@@ -15,7 +15,27 @@ var ggshop = {
                 });
             }
         });
+    },
+
+    //添加选项卡
+    addTabs: function (title,href) {
+        if ($('#tab').tabs('exists', title)) {
+            $('#tab').tabs('select', title);
+        } else {
+            $('#tab').tabs('add', {
+                title: title,
+                href: href,
+                closable: true
+            });
+
+
+        }
+    },
+    closeTabs:function (title) {
+        $('#tab').tabs('close',title);
     }
+
+
 
 };
 

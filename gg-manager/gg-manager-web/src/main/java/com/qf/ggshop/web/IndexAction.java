@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @Scope("prototype")
 public class IndexAction {
-
+    
     @RequestMapping("/")
-    public String index(){
+    public String index() {
         return "index";
     }
-
+    
     @RequestMapping("/{page}")
-    public String page(@PathVariable("page") String page){
+    public String page(@PathVariable("page") String page) {
         return page;
     }
 }
