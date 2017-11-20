@@ -57,5 +57,29 @@ public class ItemAction {
         return i;
     }
 
+    @ResponseBody
+    @RequestMapping("/items/down")
+    public int downItems(@RequestParam("ids[]") List<Long> ids){
+        int i = 0;
+        try {
+            i = itemService.downItems(ids);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 
+    @ResponseBody
+    @RequestMapping("/items/up")
+    public int upItems(@RequestParam("ids[]") List<Long> ids){
+        int i = 0;
+        try {
+            i = itemService.upItems(ids);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 }

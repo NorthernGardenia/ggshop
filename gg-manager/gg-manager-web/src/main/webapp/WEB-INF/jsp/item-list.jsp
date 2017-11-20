@@ -28,6 +28,55 @@
 <table id="dg"></table>
 <script>
 
+    function up() {
+        var selections = $('#dg').datagrid('getSelections');
+        if(selections.length==0){
+            $.messager.alert('提示','老哥,好歹选一条记录吧');
+            return;
+        }
+        $.messager.confirm('确认','你确认想要上架商品吗',function (r) {
+            if(r){
+                var ids = [];
+                for(var i=0;i<selections.length;i++){
+                    ids.push(selections[i].id);
+                }
+
+                $.post(
+                    'items/up',
+                    {'ids[]':ids},
+                    function (data) {
+                        $('#dg').datagrid('reload');
+                    },
+                    'json'
+                )
+            }
+        })
+    }
+    //下架
+    function down() {
+        var selections = $('#dg').datagrid('getSelections');
+        if(selections.length==0){
+            $.messager.alert('提示','老哥,好歹选一条记录吧');
+            return;
+        }
+        $.messager.confirm('确认','你确认想要下架商品吗',function (r) {
+            if(r){
+                var ids = [];
+                for(var i=0;i<selections.length;i++){
+                    ids.push(selections[i].id);
+                }
+
+                $.post(
+                    'items/down',
+                    {'ids[]':ids},
+                    function (data) {
+                        $('#dg').datagrid('reload');
+                    },
+                    'json'
+                )
+            }
+        })
+    }
     function remove(){
         var selections =$('#dg').datagrid('getSelections');
         if(selections.length==0){

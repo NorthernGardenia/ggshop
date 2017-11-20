@@ -12,4 +12,8 @@ public interface ItemService {
     Result<ItemCustom> listItemsByPage(Page page);
 
     int updateBatch(List<Long> ids);
+
+    int downItems(List<Long> ids);
+
+    int upItems(List<Long> ids);
 }

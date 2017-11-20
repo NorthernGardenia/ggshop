@@ -74,4 +74,42 @@ public class ItemServiceImpl implements ItemService {
         }
         return i;
     }
+
+    @Override
+    public int downItems(List<Long> ids) {
+        int i =0;
+        try {
+            Item record = new Item();
+            record.setStatus((byte)2);
+
+            ItemExample example = new ItemExample();
+            ItemExample.Criteria criteria = example.createCriteria();
+            criteria.andIdIn(ids);
+
+            i = itemDao.updateByExampleSelective(record,example);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public int upItems(List<Long> ids) {
+        int i =0;
+        try {
+            Item record = new Item();
+            record.setStatus((byte)1);
+
+            ItemExample example = new ItemExample();
+            ItemExample.Criteria criteria = example.createCriteria();
+            criteria.andIdIn(ids);
+
+            i = itemDao.updateByExampleSelective(record,example);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
