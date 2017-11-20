@@ -4,8 +4,12 @@ import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.pojo.vo.ItemCustom;
 
+import java.util.List;
+
 public interface ItemService {
 
 
     Result<ItemCustom> listItemsByPage(Page page);
+
+    int updateBatch(List<Long> ids);
 }

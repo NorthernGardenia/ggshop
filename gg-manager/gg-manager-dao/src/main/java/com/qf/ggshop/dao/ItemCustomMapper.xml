@@ -12,7 +12,7 @@
     <select id="countItems" resultType="_int">
         select count(1)
         from item i
-
+        where i.status !=3
     </select>
 
     <select id="listItemsByPage"  resultType="com.qf.ggshop.pojo.vo.ItemCustom">
@@ -20,6 +20,7 @@
         <include refid="Base_Column_List" />
         FROM item i
         LEFT JOIN item_cat c ON i.cid = c.id
+        where i.status !=3
         LIMIT #{page.offset},#{page.rows}
     </select>
 

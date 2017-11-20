@@ -27,6 +27,40 @@
 
 <table id="dg"></table>
 <script>
+
+    function remove(){
+        var selections =$('#dg').datagrid('getSelections');
+        if(selections.length==0){
+            $.messager.alert('提示','老哥,好歹选一条记录吧');
+            return;
+        }
+        //至少选中一条
+        //确认框
+        $.messager.confirm('确认','你确认想要删除记录么',function (r) {
+            if(r){
+                var ids =[];
+
+                //遍历选中的记录,讲记录的ID存到JS数组中
+                for(var i=0;i<selections.length;i++){
+                    ids.push(selections[i].id);
+                }
+                $.post(
+                    //url:请求后台的哪个地址来处理
+                    'items/batch',
+                    //从前台哪些处理交给后台处理
+                    {'ids[]':ids},
+                    //后台处理成功返回的函数
+                    function (data) {
+                        $('#dg').datagrid('reload');
+                    },
+                    //返回的格式类型
+                    'json'
+
+                );
+            }
+        })
+    }
+
     $('#dg').datagrid({
         url:"items",
 
