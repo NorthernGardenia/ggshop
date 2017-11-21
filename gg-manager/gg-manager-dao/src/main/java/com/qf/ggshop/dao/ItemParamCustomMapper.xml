@@ -8,13 +8,11 @@
         p.param_data as paramData
     </sql>
 
-    //查询总数量
     <select id="countItemParams" resultType="_int">
         select count(1)
         from item_param p
     </select>
 
-    //分页查找规格参数
     <select id="listItemParamsByPage" resultType="com.qf.ggshop.pojo.vo.ItemParamCustom">
         select
         <!--去重操作-->
