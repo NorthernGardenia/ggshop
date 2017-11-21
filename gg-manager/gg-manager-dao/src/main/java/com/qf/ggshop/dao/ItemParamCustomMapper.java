@@ -5,6 +5,7 @@ import com.qf.ggshop.pojo.vo.ItemParamCustom;
 import java.util.List;
 import java.util.Map;
 
+
 public interface ItemParamCustomMapper {
     //查询规格参数数据总数量
     int countItemParams();

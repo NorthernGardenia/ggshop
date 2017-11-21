@@ -30,12 +30,13 @@
                     <%--隐藏域--%>
                     <ul id="item-param-group-template" style="display:none;">
                         <li>
+                            <%--组名--%>
                             <input name="group">
                             <button title="添加参数" class="easyui-linkbutton" onclick="addParam(this)" type="button"
                                     data-options="iconCls:'icon-add'"></button>
                             <button title="删除分组" class="easyui-linkbutton" onclick="delGroup(this)" type="button"
                                     data-options="iconCls:'icon-cancel'"></button>
-
+                                <%--组内参数--%>
                             <ul class="item-param">
                                 <li>
                                     <input name="param">
@@ -76,28 +77,28 @@
     }
     
     //添加参数
-    function addParam() {
+    function addParam(ele) {
         $addParamLi=$("#item-param-group-template .item-param li").eq(0).clone();
         $(ele).parent().find('.item-param').append($addParamLi);
     }
 
     //删除参数
-    function delParam() {
+    function delParam(ele) {
         $(ele).parent().remove();
     }
 
 
     //保存（将规格参数添加数据库）
     function submitForm() {
-
+        //存放group和param
         var groupValues=[];
 
         //先取出所有组
         var $groups = $('#item-param-group [name=group]');
         //遍历分组
         $groups.each(function (index, ele) {
-            //遍历分组项
 
+            //遍历分组项
             var paramValues = [];
             var $params = $(ele).parent().find(".item-param [name=param]");
             //遍历参数项
@@ -129,7 +130,7 @@
             url,
             {paramData:jsonStr},
             function (data) {
-                console.log(data);
+                //console.log(data);
                 if(data>0){
                     $.messager.alert('消息','保存成功！','info');
                     ddshop.addTabs('规格参数', 'itemParams');
