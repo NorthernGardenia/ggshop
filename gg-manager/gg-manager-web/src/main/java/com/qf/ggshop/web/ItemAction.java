@@ -91,7 +91,7 @@ public class ItemAction {
     }
 
     /*
-    * 修改之前先获取到数据
+    * 修改之前先获取到数据fff
     * */
     @RequestMapping("/item/modifyItem/{id}")
     public String modifyItem_getItemById(@PathVariable("id") Long id, Model model){
