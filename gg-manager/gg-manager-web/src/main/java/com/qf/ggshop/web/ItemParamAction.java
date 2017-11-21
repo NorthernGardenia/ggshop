@@ -22,7 +22,7 @@ public class ItemParamAction {
     
     //分页显示规格参数
     @ResponseBody
-    @RequestMapping("/itemParams")
+    @RequestMapping("/listItemParams")
     public Result<ItemParamCustom> listItemParamsByPage(Page page) {
         Result<ItemParamCustom> result=null;
         try {
@@ -36,10 +36,16 @@ public class ItemParamAction {
     
     //保存分组规格参数
     @ResponseBody
-    @RequestMapping("/item/param/")
+    @RequestMapping("/item/param/save/{cid}")
     public int saveGroupParams(@PathVariable("cid") Long cid , ItemParam itemParam){
-      
-        return 0;
+        int i=0;
+        try {
+            i = itemParamService.addGroupParams(cid, itemParam);
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
     
 }

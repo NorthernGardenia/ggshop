@@ -64,6 +64,33 @@
 </div>
 
 <script>
+
+    //加载商品类目树型下拉框
+    $("#cid").combotree({
+        url:'itemCats?parentid=0',
+        required:true,
+        //展开前
+        onBeforeExpand: function (node) {
+            //获取当前被点击的tree
+            var $currentTree = $('#cid').combotree('tree');
+            //调用easyui tree组件的options方法
+            //返回树控件属性#无参数
+            var option = $currentTree.tree('options');
+            //修改option的url属性
+            option.url = 'itemCats?parentid=' + node.id;
+        },
+        //叶子节点选择前
+        onBeforeSelect: function (node) {
+            //判断选中节点是否为叶子节点，如果是，返回true
+            var isLeaf = $('#cid').tree('isLeaf', node.target);
+            //如果后台管理员选中的不是叶子节点的话，给出警告框
+            if (!isLeaf) {
+                $.messager.alert('警告', '请选中最终的类别！', 'warning');
+                return false;
+            }
+        }
+    })
+
     
     //添加组
     function addGroup() {
@@ -125,7 +152,7 @@
         //发送ajax请求保存数据
         var cid=$('#cid').combotree('getValue');
         var url='item/param/save/'+cid;
-        var jsonStr=JSON.stringify(groupValues)
+        var jsonStr=JSON.stringify(groupValues);
         $.post(
             url,
             {paramData:jsonStr},
@@ -133,15 +160,12 @@
                 //console.log(data);
                 if(data>0){
                     $.messager.alert('消息','保存成功！','info');
-                    ddshop.addTabs('规格参数', 'itemParams');
+                    ggshop.addTabs('规格参数', 'listItemParams');
                 }
             }
         )
 
     }
-
-
-
 
 </script>
 
