@@ -4,7 +4,8 @@
 
     <sql id="Base_Column_List" >
         i.id, i.title, i.sell_point as sellPoint, i.price,
-        i.num, i.image, i.cid, i.status,i.comment_id, i.gmt_create, i.gmt_modified,
+        i.num, i.image, i.cid, i.status,i.comment_id as commentId,
+        i.gmt_create as gmtCreate, i.gmt_modified as gmtModified,
         c.name as catName
     </sql>
 
