@@ -152,4 +152,25 @@ public class Item {
     public void setText4(String text4) {
         this.text4 = text4 == null ? null : text4.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", sellPoint='" + sellPoint + '\'' +
+                ", price=" + price +
+                ", num=" + num +
+                ", image='" + image + '\'' +
+                ", cid=" + cid +
+                ", status=" + status +
+                ", commentId='" + commentId + '\'' +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                ", text1='" + text1 + '\'' +
+                ", text2='" + text2 + '\'' +
+                ", text3='" + text3 + '\'' +
+                ", text4='" + text4 + '\'' +
+                '}';
+    }
 }
