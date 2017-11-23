@@ -21,5 +21,7 @@ public interface ItemService {
 
     Item seleceItemById(Long id);
 
+    int saveItem(Item Item, String content);
+
     ItmeDesc selectDescById(Long id);
 }

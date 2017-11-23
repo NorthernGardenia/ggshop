@@ -1,5 +1,6 @@
 package com.qf.ggshop.service.impl;
 
+import com.qf.ggshop.common.util.IDUtils;
 import com.qf.ggshop.dao.ItemMapper;
 import com.qf.ggshop.dao.ItmeDescMapper;
 import com.qf.ggshop.pojo.po.Item;
@@ -15,6 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -146,4 +149,36 @@ public class ItemServiceImpl implements ItemService {
         }
         return null;
     }
+
+    /**
+     * 新增商品
+     */
+    //加上注解@Transactional之后，这个方法就变成了事务方法
+    //并不是事务方法越多越好，查询方法不需要添加为事务方法
+    @Transactional
+    @Override
+    public int saveItem(Item Item, String content) {
+        int i = 0;
+        try {
+            //这个方法中需要处理两张表格tb_item tb_item_desc
+            //调用工具类生成商品的ID
+            //处理tb_item
+            Long itemId = IDUtils.getItemId();
+            Item.setId(itemId);
+            Item.setStatus((byte)2);
+            Item.setId(itemId);
+            i = itemDao.insert(Item);
+            //处理tb_item_desc
+            ItmeDesc desc = new ItmeDesc();
+            desc.setItemId(itemId);
+            desc.setItemDesc(content);
+
+            i += itemDescDao.insert(desc);
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
 }
