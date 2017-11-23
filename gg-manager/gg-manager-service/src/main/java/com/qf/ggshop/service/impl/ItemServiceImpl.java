@@ -1,8 +1,11 @@
 package com.qf.ggshop.service.impl;
 
 import com.qf.ggshop.dao.ItemMapper;
+import com.qf.ggshop.dao.ItmeDescMapper;
 import com.qf.ggshop.pojo.po.Item;
 import com.qf.ggshop.pojo.po.ItemExample;
+import com.qf.ggshop.pojo.po.ItmeDesc;
+import com.qf.ggshop.pojo.po.ItmeDescExample;
 import com.qf.ggshop.pojo.vo.ItemCustom;
 import com.qf.ggshop.service.ItemService;
 import com.qf.ggshop.dao.ItemCustomMapper;
@@ -24,6 +27,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemMapper itemDao;
+
+    @Autowired
+    private ItmeDescMapper itemDescDao;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -111,5 +117,33 @@ public class ItemServiceImpl implements ItemService {
             e.printStackTrace();
         }
         return 0;
+    }
+
+
+    /*
+    * 通过id查询商品
+    * */
+    @Override
+    public Item seleceItemById(Long id) {
+        ItemExample example = new ItemExample();
+        example.createCriteria().andIdEqualTo(id);
+        List<Item> items = itemDao.selectByExample(example);
+        return items.get(0);
+    }
+
+
+    /*
+        获取商品详情By 商品Id
+     */
+    @Override
+    public ItmeDesc selectDescById(Long id) {
+        ItmeDescExample example = new ItmeDescExample();
+        example.createCriteria().andItemIdEqualTo(id);
+        List<ItmeDesc> itemDescs = itemDescDao.selectByExampleWithBLOBs(example);
+        System.out.println(itemDescs);
+        if(itemDescs != null && itemDescs.size()>0){
+            return itemDescs.get(0);
+        }
+        return null;
     }
 }
