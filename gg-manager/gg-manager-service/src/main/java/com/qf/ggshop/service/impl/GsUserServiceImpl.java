@@ -81,8 +81,6 @@ public class GsUserServiceImpl implements GsUserService {
     public int unfreezeGsUser(List<Long> ids) {
         int i=0;
         try {
-
-
             //准备商品对象,这个对象包含了状态为3的字段
             GsUser record = new GsUser();
             record.setStatus((byte)1);
