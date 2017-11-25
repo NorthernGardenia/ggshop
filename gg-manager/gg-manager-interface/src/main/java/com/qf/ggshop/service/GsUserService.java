@@ -10,4 +10,6 @@ public interface GsUserService {
     Result<GsUser> listGsUserByPage(Page page);
 
     int freezeGsUser(List<Long> ids);
+
+    int unfreezeGsUser(List<Long> ids);
 }

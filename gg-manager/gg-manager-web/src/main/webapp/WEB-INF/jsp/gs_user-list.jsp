@@ -52,6 +52,31 @@
         })
     }
 
+    //解冻
+    function unfreeze() {
+        var selections = $('#dg').datagrid('getSelections');
+        if(selections.length==0){
+            $.messager.alert('提示','请选一条记录');
+            return;
+        }
+        $.messager.confirm('确认','你确认想要解冻用户吗?',function (r) {
+            if(r){
+                var ids = [];
+                for(var i=0;i<selections.length;i++){
+                    ids.push(selections[i].id);
+                }
+
+                $.post(
+                    'items/unfreeze',
+                    {'ids[]':ids},
+                    function (data) {
+                        $('#dg').datagrid('reload');
+                    },
+                    'json'
+                )
+            }
+        })
+    }
 
 
     $('#dg').datagrid({

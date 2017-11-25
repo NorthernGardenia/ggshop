@@ -100,7 +100,7 @@ public class ItemServiceImpl implements ItemService {
             logger.error(e.getMessage(),e);
             e.printStackTrace();
         }
-        return 0;
+        return i;
     }
 
     @Override
@@ -119,7 +119,7 @@ public class ItemServiceImpl implements ItemService {
             logger.error(e.getMessage(),e);
             e.printStackTrace();
         }
-        return 0;
+        return i;
     }
 
 
