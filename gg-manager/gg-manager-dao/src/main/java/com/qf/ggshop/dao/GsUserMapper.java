@@ -28,4 +28,5 @@ public interface GsUserMapper {
     int updateByPrimaryKeySelective(GsUser record);
 
     int updateByPrimaryKey(GsUser record);
+
 }
