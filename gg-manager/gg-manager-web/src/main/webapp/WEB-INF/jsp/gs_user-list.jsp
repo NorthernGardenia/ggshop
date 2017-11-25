@@ -51,7 +51,7 @@
                 }
 
                 $.post(
-                    'items/up',
+                    'items/freeze',
                     {'ids[]':ids},
                     function (data) {
                         $('#dg').datagrid('reload');
