@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.ggshop.dao.OrderCustomMapper" >
+
+    <sql id="Base_Column_List" >
+        o.order_id as OrderId, o.shoping_code as shopingCode, i.text1 as itemname, u.username,
+        o.buyer_message as buyerMessage,i.status, o.status, oi.num, oi.price,oi.total_fee as totalFee,
+        o.payment,os.receiver_name as receiverName,os.receiver_mobile as receiverMobile,
+        os.receiver_prvc as receiverPrvc,
+        o.gmt_create as gmtCreate, o.gmt_modified as gmtModified
+    </sql>
+
+    <sql id="Where_Clause">
+        <where>
+            o.status !=6 and i.status!=3
+            <if test="query!=null and query.orderId !=null and query.orderId!=''">
+                and o.order_id=#{query.orderId}
+            </if>
+            <if test="query!=null and query.username !=null and query.username!=''">
+                and u.username like '%${query.username}%'
+            </if>
+            <if test="query!=null and query.status !=null and query.status!=0">
+                and o.status=#{query.status}
+            </if>
+        </where>
+    </sql>
+
+
+     <!--查询数量-->
+    <select id="countOrders" resultType="_int">
+        select count(1)
+        from gs_order o
+        LEFT JOIN gs_order_shopping os ON o.order_id = os.order_id
+        LEFT JOIN gs_order_item oi ON o.order_id=oi.order_id
+        LEFT JOIN gs_user u ON  o.user_id=u.id
+        LEFT JOIN item  i ON oi.item_id=i.id
+        <include refid="Where_Clause"/>
+    </select>
+
+    <!--分页查询-->
+    <select id="listOrdersByPage"  resultType="com.qf.ggshop.pojo.vo.OrderCustom">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM gs_order o
+        LEFT JOIN gs_order_shopping os ON o.order_id = os.order_id
+        LEFT JOIN gs_order_item oi ON o.order_id=oi.order_id
+        LEFT JOIN gs_user u ON  o.user_id=u.id
+        LEFT JOIN item  i ON oi.item_id=i.id
+        <include refid="Where_Clause"/>
+        ORDER BY o.gmt_create DESC
+        LIMIT #{page.offset},#{page.rows}
+    </select>
+
+    <insert id="save" >
+
+    </insert>
+
+</mapper>

@@ -3,7 +3,7 @@ package com.qf.ggshop.pojo.po;
 import java.util.Date;
 
 public class GsOrder {
-    private String orderId;
+    private String orderId;  //订单号
 
     private String payment;
 
@@ -27,7 +27,7 @@ public class GsOrder {
 
     private String shoppingName;
 
-    private String shopingCode;
+    private String shopingCode; //物流单号
 
     private Long userId;
 

@@ -26,6 +26,15 @@
                 <li data-options="attributes:{'href':'item-param-list'}">规格参数</li>
             </ul>
         </div>
+
+        <div title="订单管理" data-options="selected:true,iconCls:'icon-tip'" style="padding:10px 0;">
+            <ul class="easyui-tree">
+                <li data-options="attributes:{'href':'order-list'}">查询订单</li>
+                <li data-options="attributes:{'href':'order-modified'}">修改订单</li>
+                <li data-options="attributes:{'href':'order-cancel'}">取消订单</li>
+            </ul>
+        </div>
+
         <div title="网站内容管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
             <ul class="easyui-tree">
                 <li data-options="attributes:{'href':'content-category'}">内容分类管理</li>
