@@ -3,7 +3,7 @@
 
 <div id="toolbar">
     <div style="padding: 5px; background-color: #fff;">
-        <label>单号：</label>
+        <label>订单号：</label>
         <input class="easyui-textbox" type="text" id="order_id">
         <label>用户名：</label>
         <input class="easyui-textbox" type="text" id="username">
