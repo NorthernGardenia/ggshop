@@ -33,11 +33,6 @@
                 <li data-options="attributes:{'href':'item/modifyItem/536563'}">修改实例</li>
             </ul>
         </div>
-        <div title="用户管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
-            <ul class="easyui-tree">
-                <li data-options="attributes:{'href':'gs_user-list'}">查看用户</li>
-            </ul>
-        </div>
         <div title="网站内容管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
             <ul class="easyui-tree">
                 <li data-options="attributes:{'href':'content-category'}">内容分类管理</li>
