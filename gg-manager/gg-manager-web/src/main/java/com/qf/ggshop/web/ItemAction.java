@@ -2,7 +2,10 @@ package com.qf.ggshop.web;
 
 
 
+import com.qf.ggshop.pojo.po.Item;
+import com.qf.ggshop.pojo.po.ItmeDesc;
 import com.qf.ggshop.pojo.vo.ItemCustom;
+import com.qf.ggshop.pojo.vo.ItemModify;
 import com.qf.ggshop.service.ItemService;
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
@@ -11,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,6 +50,20 @@ public class ItemAction {
 
         return result;
     }
+
+    @ResponseBody
+    @RequestMapping("/item")
+    public int saveItem(Item Item,String content){
+        int i = 0;
+        try {
+             i = itemService.saveItem(Item, content);
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
 
     @ResponseBody
     @RequestMapping("/items/batch")
@@ -83,5 +102,27 @@ public class ItemAction {
             e.printStackTrace();
         }
         return i;
+    }
+
+    /*
+    * 修改之前先获取到数据fff
+    * */
+    @RequestMapping("/item/modifyItem/{id}")
+    public String modifyItem_getItemById(@PathVariable("id") Long id, Model model){
+        Item item = null;
+        ItmeDesc desc = null;
+        ItemModify itemModify = new ItemModify();
+        try {
+            item = itemService.seleceItemById(id);
+            desc = itemService.selectDescById(id);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        itemModify.setItem(item);
+        itemModify.setItemDesc(desc);
+        model.addAttribute("item",itemModify);
+        System.out.println("return|"+desc+"|"+item);
+        return "item-modify";
     }
 }

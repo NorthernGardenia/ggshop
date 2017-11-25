@@ -2,6 +2,8 @@ package com.qf.ggshop.service;
 
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
+import com.qf.ggshop.pojo.po.Item;
+import com.qf.ggshop.pojo.po.ItmeDesc;
 import com.qf.ggshop.pojo.vo.ItemCustom;
 
 import java.util.List;
@@ -16,4 +18,10 @@ public interface ItemService {
     int downItems(List<Long> ids);
 
     int upItems(List<Long> ids);
+
+    Item seleceItemById(Long id);
+
+    int saveItem(Item Item, String content);
+
+    ItmeDesc selectDescById(Long id);
 }
