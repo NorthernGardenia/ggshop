@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface GsUserService {
     Result<GsUser> listGsUserByPage(Page page, UserQuery query);
-    Result<GsUser> listGsUserByPage(Page page);
+
 
     int freezeGsUser(List<Long> ids);
 }
