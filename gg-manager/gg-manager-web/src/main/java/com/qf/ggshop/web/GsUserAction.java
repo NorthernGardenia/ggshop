@@ -3,6 +3,7 @@ package com.qf.ggshop.web;
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.pojo.po.GsUser;
+import com.qf.ggshop.pojo.vo.UserQuery;
 import com.qf.ggshop.service.GsUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,12 +26,12 @@ public class GsUserAction {
 
     @ResponseBody
     @RequestMapping("/gsUsers")
-    public Result<GsUser> listGsUserByPage(Page page){
+    public Result<GsUser> listGsUserByPage(Page page, UserQuery query){
         Result<GsUser> result = null;
         try{
             result = new Result<GsUser>();
 
-            result = gsUserService.listGsUserByPage(page);
+            result = gsUserService.listGsUserByPage(page,query);
 
 
 
@@ -43,4 +44,8 @@ public class GsUserAction {
         return result;
 
     }
+
+
+
+
 }
