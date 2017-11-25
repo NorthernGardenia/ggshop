@@ -62,6 +62,22 @@ public class GsUserAction {
     }
 
 
+    @ResponseBody
+    @RequestMapping("/items/unfreeze")
+    public int unfreezeGsUser(@RequestParam("ids[]") List<Long> ids){
+        int i = 0;
+        try {
+            i = gsUserService.unfreezeGsUser(ids);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+
+
+
 
 
 }

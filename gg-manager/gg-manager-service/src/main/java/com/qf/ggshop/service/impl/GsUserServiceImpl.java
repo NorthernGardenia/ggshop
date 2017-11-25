@@ -76,4 +76,26 @@ public class GsUserServiceImpl implements GsUserService {
         }
         return i;
     }
+
+    @Override
+    public int unfreezeGsUser(List<Long> ids) {
+        int i=0;
+        try {
+
+
+            //准备商品对象,这个对象包含了状态为3的字段
+            GsUser record = new GsUser();
+            record.setStatus((byte)1);
+            //创建更新模板
+            GsUserExample example=new GsUserExample();
+            GsUserExample.Criteria criteria=example.createCriteria();
+            criteria.andIdIn(ids);
+            //执行更新
+            i=gsUserDao.updateByExampleSelective(record,example);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 }
