@@ -3,9 +3,9 @@
 
 <div id="toolbar">
     <div style="padding: 5px; background-color: #fff;">
-        <label>商品标题：</label>
-        <input class="easyui-textbox" type="text" id="title">
-        <label>商品状态：</label>
+        <label>用户名：</label>
+        <input class="easyui-textbox" type="text" id="username">
+        <label>用户状态：</label>
         <select id="status" class="easyui-combobox">
             <option value="0">全部</option>
             <option value="1">正常</option>
@@ -25,7 +25,17 @@
 
 <table id="dg"></table>
 <script>
-
+    function editParam() {
+       alert("编辑用户信息") 
+    }
+    
+    function searchForm() {
+        $('#dg').datagrid('load',{
+            username:$('#username').val(),
+            status:$('#status').combobox('getValue')
+        });
+    }
+    
     //冻结
     function freeze() {
         var selections = $('#dg').datagrid('getSelections');

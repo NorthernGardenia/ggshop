@@ -7,15 +7,28 @@
     g.gmt_modified AS gmtModified, g.sbst1, g.sbst2, g.sbst3
   </sql>
 
+  <sql id="Where_Clause" >
+    <where>
+      <if test="query != null and query.username != null and query.username != '' ">
+        and g.username like '%${query.username}%'
+      </if>
+      <if test="query != null and query.status != null and query.status != 0 ">
+        and g.status = #{query.status}
+      </if>
+    </where>
+  </sql>
+
   <select id="countGsUser" resultType="_int">
     select count(1)
         from gs_user g
+    <include refid="Where_Clause"/>
   </select>
 
   <select id="listGsUserByPage" resultType="com.qf.ggshop.pojo.po.GsUser">
     SELECT
     <include refid="Base_Column_List" />
     FROM gs_user g
+    <include refid="Where_Clause"/>
     LIMIT #{page.offset},#{page.rows}
   </select>
 </mapper>

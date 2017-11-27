@@ -5,6 +5,7 @@ import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.dao.GsUserCustomMapper;
 import com.qf.ggshop.dao.GsUserMapper;
 import com.qf.ggshop.pojo.po.GsUser;
+import com.qf.ggshop.pojo.vo.UserQuery;
 import com.qf.ggshop.pojo.po.GsUserExample;
 import com.qf.ggshop.service.GsUserService;
 import org.slf4j.Logger;
@@ -29,14 +30,14 @@ public class GsUserServiceImpl implements GsUserService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public Result<GsUser> listGsUserByPage(Page page) {
+    public Result<GsUser> listGsUserByPage(Page page, UserQuery query) {
         Result<GsUser> result = null;
         try{
             result = new Result<GsUser>();
 
             Map<String,Object> map =new HashMap<>();
             map.put("page",page);
-
+            map.put("query",query);
             int i =gsUserCustomDao.countGsUser();
             List<GsUser> list =gsUserCustomDao.listGsUserByPage(map);
 
@@ -80,8 +81,6 @@ public class GsUserServiceImpl implements GsUserService {
     public int unfreezeGsUser(List<Long> ids) {
         int i=0;
         try {
-
-
             //准备商品对象,这个对象包含了状态为3的字段
             GsUser record = new GsUser();
             record.setStatus((byte)1);
