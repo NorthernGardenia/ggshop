@@ -48,7 +48,7 @@ public class GsUserAction {
     }
 
     @ResponseBody
-    @RequestMapping("/items/freeze")
+    @RequestMapping("/gsUsers/freeze")
     public int freezeGsUser(@RequestParam("ids[]") List<Long> ids){
         int i = 0;
         try {
@@ -62,7 +62,7 @@ public class GsUserAction {
 
 
     @ResponseBody
-    @RequestMapping("/items/unfreeze")
+    @RequestMapping("/gsUsers/unfreeze")
     public int unfreezeGsUser(@RequestParam("ids[]") List<Long> ids){
         int i = 0;
         try {

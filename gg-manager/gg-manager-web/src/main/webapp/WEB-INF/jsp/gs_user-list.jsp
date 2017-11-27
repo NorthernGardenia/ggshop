@@ -41,7 +41,7 @@
                 }
 
                 $.post(
-                    'items/freeze',
+                    'gsUsers/freeze',
                     {'ids[]':ids},
                     function (data) {
                         $('#dg').datagrid('reload');
@@ -67,7 +67,7 @@
                 }
 
                 $.post(
-                    'items/unfreeze',
+                    'gsUsers/unfreeze',
                     {'ids[]':ids},
                     function (data) {
                         $('#dg').datagrid('reload');
