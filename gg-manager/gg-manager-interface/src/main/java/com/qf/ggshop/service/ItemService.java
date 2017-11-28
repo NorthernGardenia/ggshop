@@ -21,7 +21,13 @@ public interface ItemService {
 
     Item seleceItemById(Long id);
 
-    int saveItem(Item Item, String content);
+    /**
+     *  新增商品
+     * @param Item 商品实体类
+     * @param content 商品描述
+     * @return 受到影响的行数
+     */
+    int  saveItem(Item Item, String content, String paramDate);
 
     ItmeDesc selectDescById(Long id);
 }

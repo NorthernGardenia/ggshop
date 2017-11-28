@@ -2,7 +2,8 @@ package com.qf.ggshop.pojo.po;
 
 import java.util.Date;
 
-public class Item {
+public class
+Item {
     private Long id;
 
     private String title;
