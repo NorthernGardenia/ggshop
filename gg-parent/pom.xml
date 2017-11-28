@@ -10,6 +10,7 @@
     <modules>
         <module>../gg-common</module>
         <module>../gg-manager</module>
+        <module>../gg-portal-web</module>
     </modules>
 
     <!--打包方式，默认为jar-->
