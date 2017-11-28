@@ -3,7 +3,6 @@ package com.qf.ggshop.service.impl;
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.dao.InventoryCustomMapper;
-import com.qf.ggshop.dao.InventoryMapper;
 import com.qf.ggshop.pojo.po.Inventory;
 import com.qf.ggshop.service.InventoryService;
 import org.slf4j.Logger;
@@ -11,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,4 +46,21 @@ public class InventoryServiceImpl implements InventoryService {
         }
         return result;
     }
+
+    @Override
+    public Inventory selectInventoryById(Long id) {
+
+        Inventory inventory = inventoryCustomDao.selectInventoryById(id);
+        return inventory;
+    }
+
+    @Override
+    public int modify(Inventory inventory) {
+        System.out.printf(inventory.getItemTotal());
+        inventory.setGmtModified(new Date());
+        int i = inventoryCustomDao.updateInventory(inventory);
+
+        return i;
+    }
+
 }

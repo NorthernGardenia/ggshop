@@ -65,6 +65,7 @@
                 for(var i=0;i<selections.length;i++){
                     ids.push(selections[i].id);
                 }
+                console.log(ids);
 
                 $.post(
                     'items/down',

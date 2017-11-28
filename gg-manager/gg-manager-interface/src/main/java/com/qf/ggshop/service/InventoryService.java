@@ -8,4 +8,7 @@ public interface InventoryService {
 
     Result<Inventory> listGsUserByPage(Page page);
 
+    Inventory selectInventoryById(Long id);
+
+    int modify(Inventory inventory);
 }
