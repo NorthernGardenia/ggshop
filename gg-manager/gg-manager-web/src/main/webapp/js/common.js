@@ -35,8 +35,6 @@ var ggshop = {
         $('#tab').tabs('close',title);
     }
 
-
-
 };
 
 

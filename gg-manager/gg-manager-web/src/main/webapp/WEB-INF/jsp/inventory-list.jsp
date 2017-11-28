@@ -4,7 +4,7 @@
 <div id="toolbar">
     <div style="padding: 5px; background-color: #fff;">
         <label>商品标题：</label>
-        <input class="easyui-textbox" type="text" id="title">
+        <input class="easyui-textbox" type="text" id="title" value="${inventory.itemId}">
         <label>商品状态：</label>
         <select id="status" class="easyui-combobox">
             <option value="0">全部</option>
@@ -17,8 +17,8 @@
         <%--<a onclick="searchForm()" class="easyui-linkbutton">搜索</a>--%>
     </div>
     <div>
-        <button onclick="freeze()" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">冻结</button>
-        <button onclick="unfreeze()" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">解冻</button>
+      <!--  <button onclick="freeze()" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">冻结</button>
+        <button onclick="unfreeze()" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">解冻</button>-->
         <button onclick="editParam()" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">编辑</button>
     </div>
 </div>
@@ -26,6 +26,29 @@
 <table id="dg"></table>
 <script>
 
+    function editParam() {
+        var selection = $('#dg').datagrid('getSelections');
+        //console.log(inventory);
+        if(selection.length==0){
+            $.messager.alert('提示','老哥,好歹选一条记录吧');
+            return;
+        }else if(selection>1){
+            $.messager.alert('提示','最多只能选择一条');
+            return;
+        }
+        $.messager.confirm('确认','你确认想要修改该库存吗',function (r) {
+            if(r){
+                var inventory = selection[0].itemId;
+
+                console.log(inventory);
+                ggshop.addTabs('修改库存', 'inventoryUpdate/'+inventory);
+                /*$.post(
+                    'inventory/to',
+                    {'inventory':JSON.stringify(inventory)}
+                )*/
+            }
+        })
+    }
     $('#dg').datagrid({
         url:"inventory",
 
@@ -58,7 +81,7 @@
             {field:'ck',checkbox:true},
             {field:'itemId',title:'商品编号',width:100,sortable:true},
             {field:'sellNum',title:'销量',width:100},
-      //      {field:'item_num',title:'剩余库存',width:100,},
+            {field:'itemNum',title:'剩余库存',width:100,},
             {field:'itemTotal',title:'库存总量',width:100},
             //使用moment来格式化时间
             {field:'gmtCreate',title:'创建时间',width:100,formatter:function (value,row,index){
