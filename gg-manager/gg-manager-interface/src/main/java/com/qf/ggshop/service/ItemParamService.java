@@ -9,4 +9,11 @@ public interface ItemParamService {
     Result<ItemParamCustom> listItemParamsByPage(Page page);
     
     int addGroupParams(Long cid, ItemParam itemParam);
+
+    /**
+     * 通过分类的ID查询ItemParam
+     * @param  cid
+     */
+    ItemParam getItemParamByCid(Long cid);
+
 }

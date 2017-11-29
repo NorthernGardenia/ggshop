@@ -2,11 +2,9 @@ package com.qf.ggshop.service.impl;
 
 import com.qf.ggshop.common.util.IDUtils;
 import com.qf.ggshop.dao.ItemMapper;
+import com.qf.ggshop.dao.ItemParamItemMapper;
 import com.qf.ggshop.dao.ItmeDescMapper;
-import com.qf.ggshop.pojo.po.Item;
-import com.qf.ggshop.pojo.po.ItemExample;
-import com.qf.ggshop.pojo.po.ItmeDesc;
-import com.qf.ggshop.pojo.po.ItmeDescExample;
+import com.qf.ggshop.pojo.po.*;
 import com.qf.ggshop.pojo.vo.ItemCustom;
 import com.qf.ggshop.service.ItemService;
 import com.qf.ggshop.dao.ItemCustomMapper;
@@ -18,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +32,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItmeDescMapper itemDescDao;
+
+    @Autowired
+    private ItemParamItemMapper itemParamItemDao;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -157,23 +159,35 @@ public class ItemServiceImpl implements ItemService {
     //并不是事务方法越多越好，查询方法不需要添加为事务方法
     @Transactional
     @Override
-    public int saveItem(Item Item, String content) {
+    public int saveItem(Item Item, String content, String paramDate) {
         int i = 0;
         try {
-            //这个方法中需要处理两张表格tb_item tb_item_desc
+            //这个方法中需要处理三张表格tb_item tb_item_desc item_param_item
             //调用工具类生成商品的ID
             //处理tb_item
             Long itemId = IDUtils.getItemId();
             Item.setId(itemId);
             Item.setStatus((byte)2);
-            Item.setId(itemId);
+            Item.setGmtCreate(new Date());
+            Item.setGmtModified(new Date());
             i = itemDao.insert(Item);
             //处理tb_item_desc
             ItmeDesc desc = new ItmeDesc();
             desc.setItemId(itemId);
             desc.setItemDesc(content);
+            desc.setGmtCreate(new Date());
+            desc.setGmtModified(new Date());
 
             i += itemDescDao.insert(desc);
+
+            //处理item_param_item
+            ItemParamItem itemParamItem = new ItemParamItem();
+            itemParamItem.setItemId(itemId);
+            itemParamItem.setParamData(paramDate);
+            itemParamItem.setGmtCreate(new Date());
+            itemParamItem.setGmtModified(new Date());
+
+            i += itemParamItemDao.insert(itemParamItem);
         }catch (Exception e){
             logger.error(e.getMessage(), e);
             e.printStackTrace();

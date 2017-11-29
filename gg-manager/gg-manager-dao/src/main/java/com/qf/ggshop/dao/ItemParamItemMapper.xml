@@ -125,10 +125,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qf.ggshop.pojo.po.ItemParamItem" >
-    insert into item_param_item (id, item_id, gmt_create, 
+    insert into item_param_item (id, item_id, gmt_create,
       gmt_modified, text1, text2, 
       param_data)
-    values (#{id,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP},
       #{gmtModified,jdbcType=TIMESTAMP}, #{text1,jdbcType=VARCHAR}, #{text2,jdbcType=VARCHAR}, 
       #{paramData,jdbcType=LONGVARCHAR})
   </insert>

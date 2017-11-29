@@ -27,14 +27,11 @@ var ggshop = {
                 href: href,
                 closable: true
             });
-
-
         }
     },
     closeTabs:function (title) {
         $('#tab').tabs('close',title);
     }
-
 };
 
 

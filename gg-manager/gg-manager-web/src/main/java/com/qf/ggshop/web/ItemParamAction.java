@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -47,5 +48,18 @@ public class ItemParamAction {
         }
         return i;
     }
-    
+
+    @ResponseBody
+    @RequestMapping(value = "/itemParam/query/{cid}",method = RequestMethod.GET)
+    public ItemParam getItemParamById(@PathVariable("cid") Long cid){
+        ItemParam itemParam = null;
+        try {
+            itemParam =  itemParamService.getItemParamByCid(cid);
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return itemParam;
+    }
+
 }
