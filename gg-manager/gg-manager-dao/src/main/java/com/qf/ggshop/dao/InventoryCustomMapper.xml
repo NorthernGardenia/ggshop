@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.ggshop.dao.InventoryCustomMapper" >
+
+  <sql id="Base_Column_List" >
+      i.id, i.item_id as itemId, i.sell_num as sellNum, i.item_total as itemTotal, i.gmt_create as gmtCreate, i.gmt_modified as gmtModified
+  </sql>
+
+  <select id="countInventory" resultType="_int">
+    select count(1)
+        from inventory i
+  </select>
+
+  <select id="listInventoryByPage" resultType="com.qf.ggshop.pojo.po.Inventory">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM inventory i
+    LIMIT #{page.offset},#{page.rows}
+  </select>
+</mapper>
