@@ -2,9 +2,11 @@ package com.qf.ggshop.service.impl;
 
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
+import com.qf.ggshop.common.util.IDUtils;
 import com.qf.ggshop.dao.GsUserCustomMapper;
 import com.qf.ggshop.dao.GsUserMapper;
 import com.qf.ggshop.pojo.po.GsUser;
+import com.qf.ggshop.pojo.po.ItmeDesc;
 import com.qf.ggshop.pojo.vo.UserQuery;
 import com.qf.ggshop.pojo.po.GsUserExample;
 import com.qf.ggshop.service.GsUserService;
@@ -12,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -92,6 +95,26 @@ public class GsUserServiceImpl implements GsUserService {
             i=gsUserDao.updateByExampleSelective(record,example);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+    @Transactional
+    @Override
+    public int saveGsUser(GsUser gsUser, String content) {
+        int i = 0;
+        try {
+            //这个方法中需要处理gs_user
+            //调用工具类生成用户的ID
+            //处理gs_user
+            Long gsUserId = IDUtils.getItemId();
+            gsUser.setId(gsUserId);
+            gsUser.setStatus((byte)1);
+            i = gsUserDao.insert(gsUser);
+
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
             e.printStackTrace();
         }
         return i;

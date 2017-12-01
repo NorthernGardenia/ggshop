@@ -3,6 +3,7 @@ package com.qf.ggshop.web;
 import com.qf.ggshop.common.dto.Page;
 import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.pojo.po.GsUser;
+import com.qf.ggshop.pojo.po.Item;
 import com.qf.ggshop.pojo.vo.UserQuery;
 import com.qf.ggshop.service.GsUserService;
 import org.slf4j.Logger;
@@ -77,6 +78,18 @@ public class GsUserAction {
     }
 
 
+    @ResponseBody
+    @RequestMapping("/saveUser")
+    public int saveItem(GsUser gsUser, String content){
+        int i = 0;
+        try {
+            i = gsUserService.saveGsUser(gsUser,content);
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 
 
 
