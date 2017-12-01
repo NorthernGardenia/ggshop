@@ -12,6 +12,7 @@
         <module>../gg-manager</module>
         <module>../gg-portal-web</module>
         <module>../gg-search-web</module>
+        <module>../gg-sso-web</module>
     </modules>
 
     <!--打包方式，默认为jar-->

@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/gg-manager/gg-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/gg-portal-web" />
     <file type="web" url="file://$PROJECT_DIR$/gg-search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/gg-sso-web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -17,7 +18,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

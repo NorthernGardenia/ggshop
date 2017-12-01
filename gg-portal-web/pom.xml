@@ -25,11 +25,6 @@
             <artifactId>commons-codec</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.baidu</groupId>
-            <artifactId>ueditor</artifactId>
-        </dependency>
-        <!--json-->
-        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
         </dependency>

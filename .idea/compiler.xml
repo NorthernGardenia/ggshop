@@ -14,6 +14,7 @@
         <module name="gg-manager-web" />
         <module name="gg-portal-web" />
         <module name="gg-search-web" />
+        <module name="gg-sso-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +29,7 @@
       <module name="gg-parent" target="1.7" />
       <module name="gg-portal-web" target="1.7" />
       <module name="gg-search-web" target="1.7" />
+      <module name="gg-sso-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

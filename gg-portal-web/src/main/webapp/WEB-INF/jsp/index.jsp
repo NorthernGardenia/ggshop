@@ -1,522 +1,2353 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>
-<%@ page session="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Cache-Control" content="no-transform">
-	<meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>天天商城-天天旗下全球美食优选网购商城-进口食品、母婴、营养保健品、生鲜、粮油、酒水饮料、休闲食品-天天商城ttshop.com</title>
-    <meta name="Keywords" content="进口食品,网上超市,网上购物,进口奶粉,天天商城,sfbest,母婴用品,营养保健品,生鲜食品,粮油,酒水,休闲食品">
-    <meta name="Description" content="天天商城天天旗下全球美食优选网购商城，精选来自60多个国家和地区的进口食品，正品行货，支持货到付款。销售包括进口奶粉、母婴用品、营养保健品、生鲜食品、粮油、酒水、休闲食品等近万种商品。">
-    <link rel="dns-prefetch" href="//pic.ttshop.com">
-    <meta property="wb:webmaster" content="3a008ad947166307">
-    <link rel="stylesheet" type="text/css" href="css/base_w1200.css?v=2016071333">
-    <link rel="stylesheet" type="text/css" href="css/index.css?v=2016071312">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/global_index.js"></script>
-	<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-.en-markup-crop-options {
-    top: 18px !important;
-    left: 50% !important;
-    margin-left: -100px !important;
-    width: 200px !important;
-    border: 2px rgba(255,255,255,.38) solid !important;
-    border-radius: 4px !important;
-}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-.en-markup-crop-options div div:first-of-type {
-    margin-left: 0px !important;
-}
-</style></head>
+	<title>首页</title>
+
+	<link href="css/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+	<link href="css/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
+
+	<link href="js/basic/css/demo.css" rel="stylesheet" type="text/css" />
+
+	<link href="css/hmstyle.css" rel="stylesheet" type="text/css"/>
+	<link href="css/skin.css" rel="stylesheet" type="text/css" />
+	<script src="css/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+	<script src="css/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+
+</head>
+
 <body>
-<!-- header start -->
-<jsp:include page="commons/header.jsp" />
-<jsp:include page="commons/mainmenu.jsp" />
-<!-- header end -->
-<!----row1------->
-<div class="slide_show" id="slide_show">
-	<div class="indexW">
-    	<div id="index_slide" class="slide_wrap">
-			<ol>
-				<c:forEach items="${ad1List}" var="node" varStatus="status">
-				<li>
-					<a name="sfbest_hp_hp_focus_${status.index}" class="fore_pic trackref" href="${node.url}" target="_blank"> 
-						<img id="lunbo_1" alt="${node.title}"	src="${node.pic}">
-				  	</a>
-				</li>
-				</c:forEach>
-			</ol>
-			<!-- <ol>
-				<li>
-				  <a name="sfbest_hp_hp_focus_1" class="fore_pic trackref" href="http://www.sfbest.com/html/activity/1495022762.html#trackref=sfbest_hp_hp_focus_1" target="_blank"> 
-					<img id="lunbo_1" alt="尽情放粽-综合"	src="images/html/01.jpg">
-				  </a>
-				</li>
-				<li><a name="sfbest_hp_hp_focus_2" class="fore_pic trackref"
-					href="/html/activity/1471514387.html" target="_blank"> <img
-						id="lunbo_2" alt="送肉啦-综合"
-						src="images/html/02.jpg">
-				</a></li>
-				<li><a name="sfbest_hp_hp_focus_3" class="fore_pic trackref"
-					href="/html/activity/1472204196.html" target="_blank"> <img
-						id="lunbo_3" alt="199-100-综合"
-						src="images/html/03.jpg">
-				</a></li>
-				<li><a name="sfbest_hp_hp_focus_4" class="fore_pic trackref"
-					href="/html/activity/1471934638.html" target="_blank"> <img
-						id="lunbo_4" alt="寻味挪威-生鲜"
-						src="images/html/04.jpg">
-				</a></li>
-				<li><a name="sfbest_hp_hp_focus_5" class="fore_pic trackref"
-					href="/html/activity/1472114146.html" target="_blank"> <img
-						id="lunbo_5" alt="199-50-综合"
-						src="images/html/05.jpg">
-				</a></li>
-				<li><a name="sfbest_hp_hp_focus_6" class="fore_pic trackref"
-					href="/html/activity/1472546864.html" target="_blank"> <img
-						id="lunbo_6" alt="香格里拉头水松茸-粮油"
-						src="images/html/06.jpg">
-				</a></li>
-				<li><a name="sfbest_hp_hp_focus_7" class="fore_pic trackref"
-					href="/html/activity/1471935715.html" target="_blank"> <img
-						id="lunbo_7" alt="王牌&王牌 酒水品牌专场-酒水"
-						src="images/html/07.jpg">
-				</a></li>
-			</ol> -->
-		</div>      
-	    <div class="rSide">	
-			  <a name="sfbest_hp_hp_focus_right-ad1" class="a-img r-img1 trackref" href="/html/activity/1472440858.html" target="_blank">
-	          <img alt="8.30-9.5 月饼" src="images/html/101.jpg">
-	          <div class="rmask"></div>
-	          </a>
-			  <a name="sfbest_hp_hp_focus_right-ad2" class="a-img r-img2 trackref" href="/html/activity/1472471068.html" target="_blank">
-	          <img s="" alt="8.30-9.5" src="images/html/102.jpg">
-	          <div class="rmask"></div>
-	          </a>
-			  
-			 			
-	          <a name="sfbest_hp_hp_focus_right-ad3" class="a-img r-img3 trackref" href="/html/activity/1473011294.html" target="_blank">
-	          <img alt="9.5中秋菜谱" src="images/html/103.jpg">
-	          <div class="rmask"></div>
-	          </a>
-		</div>   
-	</div>
-	
-	<ul class="none" id="lunboNum">
-		<c:forEach items="${ad1List}" varStatus="status">
-	    <li class="<c:if test="${status.index==0}">cur</c:if>">${status.index+1}</li>
-	    </c:forEach>
-	</ul>
-    <!-- <ul class="none" id="lunboNum">
-        <li class="cur">1</li>
-        <li class="">2</li>
-        <li class="">3</li>
-        <li class="">4</li>
-        <li class="">5</li>
-        <li class="">6</li>
-        <li class="">7</li>
-    </ul> -->
-    <div class="indexbg" id="indexbg">
-    	<dl style="left: -1903px;">
-    		<c:forEach items="${ad1List}" var="node">
-	        <dd style="background: ${node.pic2}; width: 1519px;"></dd>
-	        </c:forEach>
-	     </dl>
-	    <!-- <dl style="left: -1903px;">
-	        <dd style="background: rgb(9, 140, 121); width: 1519px;"></dd>
-	        <dd style="background: rgb(211, 29, 78); width: 1519px;"></dd>
-	        <dd style="background: rgb(187, 22, 38); width: 1519px;"></dd>
-	        <dd style="background: rgb(39, 68, 134); width: 1519px;"></dd>
-	        <dd style="background: rgb(243, 66, 94); width: 1519px;"></dd>
-	        <dd style="background: rgb(10, 13, 0); width: 1519px;"></dd>
-	        <dd style="background: rgb(5, 85, 233); width: 1519px;"></dd>
-	     </dl> -->
-   	</div>
-</div>
-<!----row1 end------->
-<!-- 口碑甄选 start -->
-<div class="indexW mt1">
-	<div class="bestbuy">
-	<div class="b_left">
-	<h2>优选必买<span></span></h2>
-				<ul class="bbig" id="bigPerfect">
-					<li class="price_list0" goods="215383" eid="b_215383_0"
-						id="cx_b_215383_0"><a
-						href="#"
-						title="红肉火龙果1000g（2个装）" target="_blank"><img class="lazy"
-							src="images/html/95256f5b2857ec28914f631532508d76.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn" style="top: 260px;">
-							<a pid="215383"
-								data_url="http://p02.ttshop.com/2016/1800215383/middle_1800215383_1_1/160x160.jpg"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_215383_0">
-							<span><sup>￥</sup></span>19.9
-						</div></li>
-					<li class="price_list0" goods="57111" eid="b_57111_0"
-						id="cx_b_57111_0"><a
-						href="#"
-						title="湾仔码头 玉米蔬菜猪肉手工水饺 720g" target="_blank"><img class="lazy"
-							src="images/html/49111b8189bf71370cdb145f8fdb1195.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn" style="top: 260px;">
-							<a pid="57111"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_57111_0">
-							<span><sup>￥</sup></span>29.7
-						</div></li>
-					<li class="price_list0" goods="5536" eid="b_5536_0"
-						id="cx_b_5536_0"><a
-						href="#"
-						title="汾酒 53°20年青花瓷  500ml" target="_blank"><img class="lazy"
-							alt="汾酒 53°20年青花瓷  500ml"
-							src="images/html/cf33d7d36f1128577782ded21fe812a9.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn">
-							<a pid="5536"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_5536_0">
-							<span><sup>￥</sup></span>318
-						</div></li>
-					<li class="price_list0" goods="12045" eid="b_12045_0"
-						id="cx_b_12045_0"><a
-						href="http://www.ttshop.com/html/products/13/1800012045.html#trackref=sfbest_hp_hp_goods_big-item4"
-						title="佳沛  新西兰阳光金果奇异果6粒" target="_blank"><img class="lazy"
-							alt="佳沛  新西兰阳光金果奇异果6粒"
-							src="images/html/2a3ba6ffb33d8fca0dc848f94e3d99d8.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn">
-							<a pid="12045"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_12045_0">
-							<span><sup>￥</sup></span>39.8
-						</div></li>
-				</ul>
-				<ul class="bsmall" id="smallPerfect">
-					<li class="price_list0" goods="37194" eid="b_37194_1"
-						id="cx_b_37194_1"><a
-						href="http://www.ttshop.com/html/products/38/1800037194.html#trackref=sfbest_hp_hp_goods_small-item1"
-						title="精气神 山黑猪猪蹄 320g" target="_blank"><img class="lazy"
-							src="images/html/c3449a684bebe21f5b6c6c79e46791ff.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn" style="top: 210px;">
-							<a pid="37194"
-								data_url="http://p02.ttshop.com/2014/1800037194/middle_1800037194_3_10/160x160.jpg"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_37194_1">
-							<span><sup>￥</sup></span>27.8
-						</div></li>
-					<li class="price_list0" goods="219085" eid="b_219085_1"
-						id="cx_b_219085_1"><a
-						href="http://www.ttshop.com/html/products/220/1500219085.html#trackref=sfbest_hp_hp_goods_small-item2"
-						title="八马茶业 福鼎白茶(白牡丹）62.5g*2" target="_blank"><img
-							class="lazy"
-							src="images/html/042cc65a4fb9899878f2f37235ca1793.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn" style="top: 210px;">
-							<a pid="219085"
-								data_url="http://p02.ttshop.com/2016/1500219085/middle_1500219085_1_1/160x160.jpg"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_219085_1">
-							<span><sup>￥</sup></span>75
-						</div></li>
-					<li class="price_list0" goods="55213" eid="b_55213_1"
-						id="cx_b_55213_1"><a
-						href="http://www.ttshop.com/html/products/56/1400055213.html#trackref=sfbest_hp_hp_goods_small-item3"
-						title="爱之湾 桃红莫斯卡托甜起泡酒 750ml" target="_blank"><img class="lazy"
-							data="images/goods/c11e0d59289782b09ea1cbcb98070017.jpg"
-							alt="爱之湾 桃红莫斯卡托甜起泡酒 750ml"
-							src="images/goods/c11e0d59289782b09ea1cbcb98070017.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn">
-							<a pid="55213"
-								data_url="http://p02.ttshop.com/2014/1400055213/middle_1400055213_1_1/160x160.jpg"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_55213_1">
-							<span><sup>￥</sup></span>38.5
-						</div></li>
-					<li class="price_list0" goods="167461" eid="b_167461_1"
-						id="cx_b_167461_1"><a
-						href="http://www.ttshop.com/html/products/168/1300167461.html#trackref=sfbest_hp_hp_goods_small-item4"
-						title="北纯  有机绿豆 1kg" target="_blank"><img class="lazy"
-							data="images/goods/7cc96c14e10f6ed8db28b4b1efdfdb07.jpg"
-							alt="北纯  有机绿豆 1kg"
-							src="images/goods/7cc96c14e10f6ed8db28b4b1efdfdb07.jpg"
-							style="display: inline;"></a>
-					<div class="gBtn p-btn bbtn">
-							<a pid="167461"
-								data_url="http://p02.ttshop.com/2015/1300167461/middle_1300167461_1_1/160x160.jpg"
-								href="javascript:void(0)" indexflag="1">加入购物车</a>
-						</div>
-						<div class="bprice" id="priceK_b_167461_1">
-							<span><sup>￥</sup></span>22.2
-						</div></li>
-				</ul>
-			</div>   
-	<!-- 口碑甄选 end --> 
-	<div class="rSide1">
-			
-    	<div class="rImg2">
-      	<a name="sfbest_hp_hp_news_right-ad" class="trackref" href="/html/activity/1472464260.html" target="_blank"><img salt="9.2-9.5" src="images/goods/751d2091c008c2a49c1934545730f041.jpg"></a>
-   		</div>
-		 
-        <div class="sfNews">
-          <div class="rTitle"><h2>最新动态</h2><a href="/www/173/" target="_blank" class="more">更多&gt;</a></div>
-          <ul>
-		              <li><a name="sfbest_hp_hp_news_1" href="/www/173/8531.html" target="_blank" class=" red trackref" title="受杭州G20峰会影响的配送问题公告">受杭州G20峰会影响的配送问题公告</a></li>
-		              <li><a name="sfbest_hp_hp_news_2" href="/www/173/8449.html" target="_blank" class=" trackref" title="购买燕麦片满49元抽奖活动中奖公告">购买燕麦片满49元抽奖活动中奖公告</a></li>
-		              <li><a name="sfbest_hp_hp_news_3" href="/www/173/8447.html" target="_blank" class=" trackref" title="满299抽iPhone6s活动中奖公告">满299抽iPhone6s活动中奖公告</a></li>
-		              <li><a name="sfbest_hp_hp_news_4" href="/www/173/8445.html" target="_blank" class=" trackref" title="《珍膳米，带你冲上云霄》活动中奖名单公布">《珍膳米，带你冲上云霄》活动中奖名单公布</a></li>
-		            </ul>
-        </div>
-    </div>
-	</div>
-	<div class="clr"></div>
-</div>
-<!--楼层 start-->
-<div class="indexW mt2 full_ad" style="width:1190px;padding-left:10px;"><a name="sfbest_hp_hp_banner_1" class="trackref" href="/html/activity/1472461333.html" target="_blank"><img alt="8.30-9.5" class="lazy" 
- src="images/goods/8f42d6d2deead3da7d50c8a702a3c939.jpg" style="display: inline;"></a>
-	 </div>
-<div class="indexW mt2 ie6 fresh">
-    <div class="category">
-	<ul class="mTitle">
-		<li>
-		<div class="cir"></div>
-		<h2>
-			<em></em>
-			<a name="sfbest_hp_hp_floor1_floor-category1" class="trackref" href="/fresh/52-0-0-0-0-2-0-0-0-0-0.html" target="_blank">水果</a>&nbsp;&nbsp;<a name="sfbest_hp_hp_floor1_floor-category2" class="trackref" href="/fresh/55-0-0-0-0-2-0-0-0-0-0.html" target="_blank">蔬菜</a>
-		</h2>
-		</li>
-	</ul>
-		<div class="lCont"><a name="sfbest_hp_hp_floor1_left-ad" class="trackref" href="/html/activity/1472459562.html" target="_blank">
-		<img alt="8.30-9.5" class="lazy" src="images/goods/26336113289bf7273823080488a9d200.jpg" style="display: inline;"></a></div>
-	  </div>
-  <div class="sfRight">
-      <div class="subCont">
-				<ul class="pList" id="floor-gap-1">
-					<li class="price_list1" eid="l_218031_7_297" goods="218031"
-						id="cx_l_218031_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218031.html#trackref=sfbest_hp_hp_floor1_item1"
-								target="_blank" title="泰国金柚700-1200g"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="泰国金柚700-1200g"
-								src="images/goods/160x160-1.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="218031"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218031.html#trackref=sfbest_hp_hp_floor1_item1"
-								target="_blank" title="泰国金柚700g-1200g">泰国金柚700g-1200g</a>
-						</div>
-						<div class="price" id="priceL_l_218031_7_297">
-							<b>￥19.9</b>
-						</div></li>
-					<li class="price_list1" eid="l_218155_7_297" goods="218155"
-						id="cx_l_218155_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218155.html#trackref=sfbest_hp_hp_floor1_item2"
-								target="_blank" title="天山一号火焰山哈密瓜1.4kg-2kg【下单后3-5天发货】"><img
-								class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="天山一号火焰山哈密瓜1.4kg-2kg【下单后3-5天发货】"
-								src="images/goods/160x160-2.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="218155"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218155.html#trackref=sfbest_hp_hp_floor1_item2"
-								target="_blank" title="天山一号火焰山哈密瓜">天山一号火焰山哈密瓜</a>
-						</div>
-						<div class="price" id="priceL_l_218155_7_297">
-							<b>￥22.8</b>
-						</div></li>
-					<li class="price_list1" eid="l_236853_7_297" goods="236853"
-						id="cx_l_236853_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236853.html#trackref=sfbest_hp_hp_floor1_item3"
-								target="_blank" title="一点红冬枣1000g"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="一点红冬枣1000g"
-								src="images/goods/160x160-3.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="236853"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236853.html#trackref=sfbest_hp_hp_floor1_item3"
-								target="_blank" title="一点红冬枣1kg">一点红冬枣1kg</a>
-						</div>
-						<div class="price" id="priceL_l_236853_7_297">
-							<b>￥69.9</b>
-						</div></li>
-					<li class="price_list1" eid="l_218955_7_297" goods="218955"
-						id="cx_l_218955_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218955.html#trackref=sfbest_hp_hp_floor1_item4"
-								target="_blank" title="墨西哥牛油果420g（3个装）"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="墨西哥牛油果420g（3个装）"
-								src="images/goods/160x160-4.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="218955"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218955.html#trackref=sfbest_hp_hp_floor1_item4"
-								target="_blank" title="墨西哥牛油果3粒420g">墨西哥牛油果3粒420g</a>
-						</div>
-						<div class="price" id="priceL_l_218955_7_297">
-							<b>￥29.9</b>
-						</div></li>
-					<li class="price_list1" eid="l_236863_7_297" goods="236863"
-						id="cx_l_236863_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236863.html#trackref=sfbest_hp_hp_floor1_item5"
-								target="_blank" title="佳沛zespri 佳沛新西兰金奇异果12个（36号）"><img
-								class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="佳沛zespri 佳沛新西兰金奇异果12个（36号）"
-								src="images/goods/160x160-5.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="236863"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236863.html#trackref=sfbest_hp_hp_floor1_item5"
-								target="_blank" title="佳沛 新西兰金奇异果12个">佳沛 新西兰金奇异果12个</a>
-						</div>
-						<div class="price" id="priceL_l_236863_7_297">
-							<b>￥76</b>
-						</div></li>
-					<li class="price_list1" eid="l_236871_7_297" goods="236871"
-						id="cx_l_236871_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236871.html#trackref=sfbest_hp_hp_floor1_item6"
-								target="_blank" title="国产西梅1000g"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="国产西梅1000g"
-								src="images/goods/160x160-6.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="236871"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/237/1800236871.html#trackref=sfbest_hp_hp_floor1_item6"
-								target="_blank" title="国产西梅1kg">国产西梅1kg</a>
-						</div>
-						<div class="price" id="priceL_l_236871_7_297">
-							<b>￥19.9</b>
-						</div></li>
-					<li class="price_list1" eid="l_218073_7_297" goods="218073"
-						id="cx_l_218073_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218073.html#trackref=sfbest_hp_hp_floor1_item7"
-								target="_blank" title="新西兰红玫瑰苹果720g(4个装)"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="新西兰红玫瑰苹果720g(4个装)"
-								src="images/goods/160x160-7.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="218073"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/219/1800218073.html#trackref=sfbest_hp_hp_floor1_item7"
-								target="_blank" title="新西兰红玫瑰苹果4粒720g">新西兰红玫瑰苹果4粒720g</a>
-						</div>
-						<div class="price" id="priceL_l_218073_7_297">
-							<b>￥35.8</b>
-						</div></li>
-					<li class="price_list1" eid="l_215405_7_297" goods="215405"
-						id="cx_l_215405_7_297"><div class="pImg">
-							<a
-								href="http://www.ttshop.com/html/products/216/1800215405.html#trackref=sfbest_hp_hp_floor1_item8"
-								target="_blank" title="皇冠蜜梨1000g（4个装）"><img class="lazy"
-								data="images/goods/160x160.jpg"
-								alt="皇冠蜜梨1000g（4个装）"
-								src="images/goods/160x160-8.jpg"
-								style="display: block;"></a>
-							<div class="gBtn p-btn">
-								<a pid="215405"
-									data_url="images/goods/160x160.jpg"
-									href="javascript:void(0)" indexflag="1">加入购物车</a>
-							</div>
-						</div>
-						<div class="title-a">
-							<a
-								href="http://www.ttshop.com/html/products/216/1800215405.html#trackref=sfbest_hp_hp_floor1_item8"
-								target="_blank" title="皇冠蜜梨4粒1kg">皇冠蜜梨4粒1kg</a>
-						</div>
-						<div class="price" id="priceL_l_215405_7_297">
-							<b>￥15.9</b>
-						</div></li>
-				</ul>
+<div class="hmtop">
+	<!--顶部导航条 -->
+	<div class="am-container header">
+		<ul class="message-l">
+			<div class="topMessage">
+				<div class="menu-hd">
+					<a href="#" target="_top" class="h">亲，请登录</a>
+					<a href="#" target="_top">免费注册</a>
+				</div>
 			</div>
-      <div class="redge">
-        <ul class="rHot">
-		            <li><a name="sfbest_hp_hp_floor1_Keywords1" class="trackref" href="/productlist/search/?categoryId=8&amp;keyword=%E8%93%9D%E8%8E%93&amp;o=saleNum%3Adesc" target="_blank">蓝莓</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords2" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E6%A4%B0%E9%9D%92" target="_blank">椰青</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords3" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%81%AB%E9%BE%99%E6%9E%9C" target="_blank">火龙果</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords4" class="trackref" href="/productlist/search/?categoryId=8&amp;keyword=%E6%B0%B4%E8%9C%9C%E6%A1%83&amp;o=saleNum" target="_blank">水蜜桃</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords5" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%89%9B%E6%B2%B9%E6%9E%9C" target="_blank">牛油果</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords6" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E4%BD%B3%E6%B2%9B" target="_blank">佳沛</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords7" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E6%96%B0%E5%A5%87%E5%A3%AB" target="_blank">新奇士</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords8" class="trackref" href="/fresh/6162-0-0-0-0-2-0-0-0-0-0.html" target="_blank">加工蔬菜</a></li>
-		             <li><a name="sfbest_hp_hp_floor1_Keywords9" class="trackref" href="/fresh/55-9695-0-0-0-2-0-0-0-0-0.html" target="_blank">加利利</a></li>
-		           </ul>
-        <div class="clr"></div>
-        <div class="rimg">
-		     
-          <a name="sfbest_hp_hp_floor1_right-ad" class="ht1 trackref" href="/html/activity/1472547970.html" target="_blank"><img alt="8.30-9.5" class="lazy" data="http://001.sfimg.cn/web/1dd1130a/1dd1130a9c0103f6ec8a13fa13f27641.jpg" src="http://001.sfimg.cn/web/1dd1130a/1dd1130a9c0103f6ec8a13fa13f27641.jpg" style="display: inline;"></a>
-          <div class="rbutton"><a href="/html/activity/1472547970.html" target="_blank"></a></div>
-		          </div>
-      </div>
-  </div>
-  <!----天天生鲜 -->
-    <span class="clr"></span>
-</div>
-<!--楼层 end -->
+		</ul>
+		<ul class="message-r">
+			<div class="topMessage home">
+				<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+			</div>
+			<div class="topMessage my-shangcheng">
+				<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+			</div>
+			<div class="topMessage mini-cart">
+				<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+			</div>
+			<div class="topMessage favorite">
+				<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+			</div>
+		</ul>
+	</div>
 
-<!-- footer start -->
-<jsp:include page="commons/footer.jsp" />
-<!-- footer end -->
+	<!--悬浮搜索框-->
+
+	<div class="nav white">
+		<div class="logo"><img src="images/logo.png" /></div>
+		<div class="logoBig">
+			<li><img src="images/logobig.png" /></li>
+		</div>
+
+		<div class="search-bar pr">
+			<a name="index_none_header_sysc" href="#"></a>
+			<form>
+				<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+				<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+			</form>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+</div>
+<div class="banner">
+	<!--轮播 -->
+	<div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
+		<ul class="am-slides">
+			<li class="banner1"><a href="introduction.html"><img src="images/ad1.jpg" /></a></li>
+			<li class="banner2"><a><img src="images/ad2.jpg" /></a></li>
+			<li class="banner3"><a><img src="images/ad3.jpg" /></a></li>
+			<li class="banner4"><a><img src="images/ad4.jpg" /></a></li>
+
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="shopNav">
+	<div class="slideall">
+
+		<div class="long-title"><span class="all-goods">全部分类</span></div>
+		<div class="nav-cont">
+			<ul>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
+			</ul>
+			<div class="nav-extra">
+				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
+				<i class="am-icon-angle-right" style="padding-left: 10px;"></i>
+			</div>
+		</div>
+
+		<!--侧边导航 -->
+		<div id="nav" class="navfull">
+			<div class="area clearfix">
+				<div class="category-content" id="guide_2">
+
+					<div class="category">
+						<ul class="category-list" id="js_climit_li">
+							<li class="appliance js_toggle relative first">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">蛋糕</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">点心</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="呵官方旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >呵官方旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="格瑞旗舰店" target="_blank" href="#" rel="nofollow"><span >格瑞旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="飞彦大厂直供" target="_blank" href="#" rel="nofollow"><span  class="red" >飞彦大厂直供</span></a></dd>
+														<dd><a rel="nofollow" title="红e·艾菲妮" target="_blank" href="#" rel="nofollow"><span >红e·艾菲妮</span></a></dd>
+														<dd><a rel="nofollow" title="本真旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >本真旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="杭派女装批发网" target="_blank" href="#" rel="nofollow"><span  class="red" >杭派女装批发网</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="饼干">饼干</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="薯片">薯片</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">虾条</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="YYKCLOT" target="_blank" href="#" rel="nofollow"><span  class ="red" >YYKCLOT</span></a></dd>
+														<dd><a rel="nofollow" title="池氏品牌男装" target="_blank" href="#" rel="nofollow"><span  class ="red" >池氏品牌男装</span></a></dd>
+														<dd><a rel="nofollow" title="男装日志" target="_blank" href="#" rel="nofollow"><span >男装日志</span></a></dd>
+														<dd><a rel="nofollow" title="索比诺官方旗舰店" target="_blank" href="#" rel="nofollow"><span >索比诺官方旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="onTTno傲徒" target="_blank" href="#" rel="nofollow"><span  class ="red" >onTTno傲徒</span></a></dd>
+														<dd><a rel="nofollow" title="玛狮路男装旗舰店" target="_blank" href="#" rel="nofollow"><span >玛狮路男装旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="劳威特品牌男装" target="_blank" href="#" rel="nofollow"><span >劳威特品牌男装</span></a></dd>
+														<dd><a rel="nofollow" title="卡斯郎世家批发城" target="_blank" href="#" rel="nofollow"><span  class ="red" >卡斯郎世家批发城</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="猪肉脯">猪肉脯</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="牛肉丝">牛肉丝</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="小香肠">小香肠</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="花颜巧语 " target="_blank" href="#" rel="nofollow"><span  class="red" >花颜巧语 </span></a></dd>
+														<dd><a rel="nofollow" title="糖衣小屋" target="_blank" href="#" rel="nofollow"><span >糖衣小屋</span></a></dd>
+														<dd><a rel="nofollow" title="卡拉迪克  " target="_blank" href="#" rel="nofollow"><span  class="red" >卡拉迪克  </span></a></dd>
+														<dd><a rel="nofollow" title="暖春童话 " target="_blank" href="#" rel="nofollow"><span >暖春童话 </span></a></dd>
+														<dd><a rel="nofollow" title="华盛童装批发行 " target="_blank" href="#" rel="nofollow"><span >华盛童装批发行 </span></a></dd>
+														<dd><a rel="nofollow" title="奈仕华童装旗舰店" target="_blank" href="#" rel="nofollow"><span >奈仕华童装旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="斑蒂尼BONDYNI" target="_blank" href="#" rel="nofollow"><span  class="red" >斑蒂尼BONDYNI</span></a></dd>
+														<dd><a rel="nofollow" title="猫儿朵朵 " target="_blank" href="#" rel="nofollow"><span >猫儿朵朵 </span></a></dd>
+														<dd><a rel="nofollow" title="童衣阁" target="_blank" href="#" rel="nofollow"><span  class="red" >童衣阁</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="豆干">豆干</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="干笋">干笋</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="鸭脖">鸭脖</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="歌芙品牌旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >歌芙品牌旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="爱丝蓝内衣厂" target="_blank" href="#" rel="nofollow"><span >爱丝蓝内衣厂</span></a></dd>
+														<dd><a rel="nofollow" title="香港优蓓尔防辐射" target="_blank" href="#" rel="nofollow"><span >香港优蓓尔防辐射</span></a></dd>
+														<dd><a rel="nofollow" title="蓉莉娜内衣批发" target="_blank" href="#" rel="nofollow"><span >蓉莉娜内衣批发</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">坚果</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">锅巴</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="呵呵嘿官方旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >呵呵嘿官方旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="格瑞旗舰店" target="_blank" href="#" rel="nofollow"><span >格瑞旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="飞彦大厂直供" target="_blank" href="#" rel="nofollow"><span  class="red" >飞彦大厂直供</span></a></dd>
+														<dd><a rel="nofollow" title="红e·艾菲妮" target="_blank" href="#" rel="nofollow"><span >红e·艾菲妮</span></a></dd>
+														<dd><a rel="nofollow" title="本真旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >本真旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="杭派女装批发网" target="_blank" href="#" rel="nofollow"><span  class="red" >杭派女装批发网</span></a></dd>
+														<dd><a rel="nofollow" title="华伊阁旗舰店" target="_blank" href="#" rel="nofollow"><span >华伊阁旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="独家折扣旗舰店" target="_blank" href="#" rel="nofollow"><span >独家折扣旗舰店</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="糖果">糖果</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蜜饯">蜜饯</span></dt>
+														<dd><a title="猕猴桃干" href="#"><span>猕猴桃干</span></a></dd>
+														<dd><a title="糖樱桃" href="#"><span>糖樱桃</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="YYKCLOT" target="_blank" href="#" rel="nofollow"><span  class ="red" >YYKCLOT</span></a></dd>
+														<dd><a rel="nofollow" title="池氏品牌男装" target="_blank" href="#" rel="nofollow"><span  class ="red" >池氏品牌男装</span></a></dd>
+														<dd><a rel="nofollow" title="男装日志" target="_blank" href="#" rel="nofollow"><span >男装日志</span></a></dd>
+														<dd><a rel="nofollow" title="索比诺官方旗舰店" target="_blank" href="#" rel="nofollow"><span >索比诺官方旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="onTTno傲徒" target="_blank" href="#" rel="nofollow"><span  class ="red" >onTTno傲徒</span></a></dd>
+														<dd><a rel="nofollow" title="卡斯郎世家批发城" target="_blank" href="#" rel="nofollow"><span  class ="red" >卡斯郎世家批发城</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">巧克力</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">果冻</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="花颜巧语 " target="_blank" href="#" rel="nofollow"><span  class="red" >花颜巧语 </span></a></dd>
+														<dd><a rel="nofollow" title="糖衣小屋" target="_blank" href="#" rel="nofollow"><span >糖衣小屋</span></a></dd>
+														<dd><a rel="nofollow" title="卡拉迪克  " target="_blank" href="#" rel="nofollow"><span  class="red" >卡拉迪克  </span></a></dd>
+														<dd><a rel="nofollow" title="暖春童话 " target="_blank" href="#" rel="nofollow"><span >暖春童话 </span></a></dd>
+														<dd><a rel="nofollow" title="华盛童装批发行 " target="_blank" href="#" rel="nofollow"><span >华盛童装批发行 </span></a></dd>
+														<dd><a rel="nofollow" title="奈仕华童装旗舰店" target="_blank" href="#" rel="nofollow"><span >奈仕华童装旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="斑蒂尼BONDYNI" target="_blank" href="#" rel="nofollow"><span  class="red" >斑蒂尼BONDYNI</span></a></dd>
+														<dd><a rel="nofollow" title="童衣阁" target="_blank" href="#" rel="nofollow"><span  class="red" >童衣阁</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/fish.png"></i><a class="ml-22" title="海味、河鲜">海味/河鲜</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="海带丝">海带丝</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="小鱼干">小鱼干</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="鱿鱼丝">鱿鱼丝</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a rel="nofollow" title="歌芙品牌旗舰店" target="_blank" href="#" rel="nofollow"><span  class="red" >歌芙品牌旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="爱丝蓝内衣厂" target="_blank" href="#" rel="nofollow"><span >爱丝蓝内衣厂</span></a></dd>
+														<dd><a rel="nofollow" title="炫点服饰" target="_blank" href="#" rel="nofollow"><span >炫点服饰</span></a></dd>
+														<dd><a rel="nofollow" title="雪茵美内衣厂批发" target="_blank" href="#" rel="nofollow"><span >雪茵美内衣厂批发</span></a></dd>
+														<dd><a rel="nofollow" title="金钻夫人" target="_blank" href="#" rel="nofollow"><span >金钻夫人</span></a></dd>
+														<dd><a rel="nofollow" title="伊美莎内衣" target="_blank" href="#" rel="nofollow"><span  class="red" >伊美莎内衣</span></a></dd>
+														<dd><a rel="nofollow" title="粉客内衣旗舰店" target="_blank" href="#" rel="nofollow"><span >粉客内衣旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="泽芳行旗舰店" target="_blank" href="#" rel="nofollow"><span >泽芳行旗舰店</span></a></dd>
+														<dd><a rel="nofollow" title="彩婷" target="_blank" href="#" rel="nofollow"><span  class="red" >彩婷</span></a></dd>
+														<dd><a rel="nofollow" title="黛兰希" target="_blank" href="#" rel="nofollow"><span >黛兰希</span></a></dd>
+														<dd><a rel="nofollow" title="香港优蓓尔防辐射" target="_blank" href="#" rel="nofollow"><span >香港优蓓尔防辐射</span></a></dd>
+														<dd><a rel="nofollow" title="蓉莉娜内衣批发" target="_blank" href="#" rel="nofollow"><span >蓉莉娜内衣批发</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/tea.png"></i><a class="ml-22" title="花茶、果茶">花茶/果茶</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">蛋糕</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="蛋糕">点心</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a title="今生只围你" target="_blank" href="#" rel="nofollow"><span >今生只围你</span></a></dd>
+														<dd><a title="忆佳人" target="_blank" href="#" rel="nofollow"><span  class="red" >忆佳人</span></a></dd>
+														<dd><a title="斐洱普斯" target="_blank" href="#" rel="nofollow"><span  class="red" >斐洱普斯</span></a></dd>
+														<dd><a title="聚百坊" target="_blank" href="#" rel="nofollow"><span  class="red" >聚百坊</span></a></dd>
+														<dd><a title="朵朵棉织直营店" target="_blank" href="#" rel="nofollow"><span >朵朵棉织直营店</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<b class="arrow"></b>
+							</li>
+							<li class="appliance js_toggle relative last">
+								<div class="category-info">
+									<h3 class="category-name b-category-name"><i><img src="images/package.png"></i><a class="ml-22" title="品牌、礼包">品牌/礼包</a></h3>
+									<em>&gt;</em></div>
+								<div class="menu-item menu-in top">
+									<div class="area-in">
+										<div class="area-bg">
+											<div class="menu-srot">
+												<div class="sort-side">
+													<dl class="dl-sort">
+														<dt><span title="大包装">大包装</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+													<dl class="dl-sort">
+														<dt><span title="两件套">两件套</span></dt>
+														<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+														<dd><a title="脱水蛋糕" href="#"><span>脱水蛋糕</span></a></dd>
+														<dd><a title="瑞士卷" href="#"><span>瑞士卷</span></a></dd>
+														<dd><a title="软面包" href="#"><span>软面包</span></a></dd>
+														<dd><a title="马卡龙" href="#"><span>马卡龙</span></a></dd>
+														<dd><a title="千层饼" href="#"><span>千层饼</span></a></dd>
+														<dd><a title="甜甜圈" href="#"><span>甜甜圈</span></a></dd>
+														<dd><a title="蒸三明治" href="#"><span>蒸三明治</span></a></dd>
+														<dd><a title="铜锣烧" href="#"><span>铜锣烧</span></a></dd>
+													</dl>
+												</div>
+												<div class="brand-side">
+													<dl class="dl-sort"><dt><span>实力商家</span></dt>
+														<dd><a title="琳琅鞋业" target="_blank" href="#" rel="nofollow"><span >琳琅鞋业</span></a></dd>
+														<dd><a title="宏利鞋业" target="_blank" href="#" rel="nofollow"><span >宏利鞋业</span></a></dd>
+														<dd><a title="比爱靓点鞋业" target="_blank" href="#" rel="nofollow"><span >比爱靓点鞋业</span></a></dd>
+														<dd><a title="浪人怪怪" target="_blank" href="#" rel="nofollow"><span >浪人怪怪</span></a></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!--轮播-->
+
+		<script type="text/javascript">
+            (function() {
+                $('.am-slider').flexslider();
+            });
+            $(document).ready(function() {
+                $("li").hover(function() {
+                    $(".category-content .category-list li.first .menu-in").css("display", "none");
+                    $(".category-content .category-list li.first").removeClass("hover");
+                    $(this).addClass("hover");
+                    $(this).children("div.menu-in").css("display", "block")
+                }, function() {
+                    $(this).removeClass("hover")
+                    $(this).children("div.menu-in").css("display", "none")
+                });
+            })
+		</script>
+
+
+
+		<!--小导航 -->
+		<div class="am-g am-g-fixed smallnav">
+			<div class="am-u-sm-3">
+				<a href="sort.html"><img src="images/navsmall.jpg" />
+					<div class="title">商品分类</div>
+				</a>
+			</div>
+			<div class="am-u-sm-3">
+				<a href="#"><img src="images/huismall.jpg" />
+					<div class="title">大聚惠</div>
+				</a>
+			</div>
+			<div class="am-u-sm-3">
+				<a href="#"><img src="images/mansmall.jpg" />
+					<div class="title">个人中心</div>
+				</a>
+			</div>
+			<div class="am-u-sm-3">
+				<a href="#"><img src="images/moneysmall.jpg" />
+					<div class="title">投资理财</div>
+				</a>
+			</div>
+		</div>
+
+		<!--走马灯 -->
+
+		<div class="marqueen">
+			<span class="marqueen-title">商城头条</span>
+			<div class="demo">
+
+				<ul>
+					<li class="title-first"><a target="_blank" href="#">
+						<img src="images/TJ2.jpg"></img>
+						<span>[特惠]</span>商城爆品1分秒
+					</a></li>
+					<li class="title-first"><a target="_blank" href="#">
+						<span>[公告]</span>商城与广州市签署战略合作协议
+						<img src="images/TJ.jpg"></img>
+						<p>XXXXXXXXXXXXXXXXXX</p>
+					</a></li>
+
+					<div class="mod-vip">
+						<div class="m-baseinfo">
+							<a href="../person/index.html">
+								<img src="images/getAvatar.do.jpg">
+							</a>
+							<em>
+								Hi,<span class="s-name">小叮当</span>
+								<a href="#"><p>点击更多优惠活动</p></a>
+							</em>
+						</div>
+						<div class="member-logout">
+							<a class="am-btn-warning btn" href="login.html">登录</a>
+							<a class="am-btn-warning btn" href="register.html">注册</a>
+						</div>
+						<div class="member-login">
+							<a href="#"><strong>0</strong>待收货</a>
+							<a href="#"><strong>0</strong>待发货</a>
+							<a href="#"><strong>0</strong>待付款</a>
+							<a href="#"><strong>0</strong>待评价</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<li><a target="_blank" href="#"><span>[特惠]</span>洋河年末大促，低至两件五折</a></li>
+					<li><a target="_blank" href="#"><span>[公告]</span>华北、华中部分地区配送延迟</a></li>
+					<li><a target="_blank" href="#"><span>[特惠]</span>家电狂欢千亿礼券 买1送1！</a></li>
+
+				</ul>
+				<div class="advTip"><img src="images/advTip.jpg"/></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<script type="text/javascript">
+        if ($(window).width() < 640) {
+            function autoScroll(obj) {
+                $(obj).find("ul").animate({
+                    marginTop: "-39px"
+                }, 500, function() {
+                    $(this).css({
+                        marginTop: "0px"
+                    }).find("li:first").appendTo(this);
+                })
+            }
+            $(function() {
+                setInterval('autoScroll(".demo")', 3000);
+            })
+        }
+	</script>
+</div>
+<div class="shopMainbg">
+	<div class="shopMain" id="shopmain">
+
+		<!--今日推荐 -->
+
+		<div class="am-g am-g-fixed recommendation">
+			<div class="clock am-u-sm-3" ">
+			<img src="images/2016.png "></img>
+			<p>今日<br>推荐</p>
+		</div>
+		<div class="am-u-sm-4 am-u-lg-3 ">
+			<div class="info ">
+				<h3>真的有鱼</h3>
+				<h4>开年福利篇</h4>
+			</div>
+			<div class="recommendationMain one">
+				<a href="introduction.html"><img src="images/tj.png "></img></a>
+			</div>
+		</div>
+		<div class="am-u-sm-4 am-u-lg-3 ">
+			<div class="info ">
+				<h3>囤货过冬</h3>
+				<h4>让爱早回家</h4>
+			</div>
+			<div class="recommendationMain two">
+				<img src="images/tj1.png "></img>
+			</div>
+		</div>
+		<div class="am-u-sm-4 am-u-lg-3 ">
+			<div class="info ">
+				<h3>浪漫情人节</h3>
+				<h4>甜甜蜜蜜</h4>
+			</div>
+			<div class="recommendationMain three">
+				<img src="images/tj2.png "></img>
+			</div>
+		</div>
+
+	</div>
+	<div class="clear "></div>
+	<!--热门活动 -->
+
+	<div class="am-container activity ">
+		<div class="shopTitle ">
+			<h4>活动</h4>
+			<h3>每期活动 优惠享不停 </h3>
+			<span class="more ">
+                              <a href="# ">全部活动<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+		</div>
+		<div class="am-g am-g-fixed ">
+			<div class="am-u-sm-3 ">
+				<div class="icon-sale one "></div>
+				<h4>秒杀</h4>
+				<div class="activityMain ">
+					<img src="images/activity1.jpg "></img>
+				</div>
+				<div class="info ">
+					<h3>春节送礼优选</h3>
+				</div>
+			</div>
+
+			<div class="am-u-sm-3 ">
+				<div class="icon-sale two "></div>
+				<h4>特惠</h4>
+				<div class="activityMain ">
+					<img src="images/activity2.jpg "></img>
+				</div>
+				<div class="info ">
+					<h3>春节送礼优选</h3>
+				</div>
+			</div>
+
+			<div class="am-u-sm-3 ">
+				<div class="icon-sale three "></div>
+				<h4>团购</h4>
+				<div class="activityMain ">
+					<img src="images/activity3.jpg "></img>
+				</div>
+				<div class="info ">
+					<h3>春节送礼优选</h3>
+				</div>
+			</div>
+
+			<div class="am-u-sm-3 last ">
+				<div class="icon-sale "></div>
+				<h4>超值</h4>
+				<div class="activityMain ">
+					<img src="images/activity.jpg "></img>
+				</div>
+				<div class="info ">
+					<h3>春节送礼优选</h3>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="clear "></div>
+
+
+	<div id="f1">
+		<!--甜点-->
+
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>甜品</h4>
+				<h3>每一道甜品都有一个故事</h3>
+				<div class="today-brands ">
+					<a href="# ">桂花糕</a>
+					<a href="# ">奶皮酥</a>
+					<a href="# ">栗子糕 </a>
+					<a href="# ">马卡龙</a>
+					<a href="# ">铜锣烧</a>
+					<a href="# ">豌豆黄</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+
+		<div class="am-g am-g-fixed floodFour">
+			<div class="am-u-sm-5 am-u-md-4 text-one list ">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<div class="outer-con ">
+						<div class="title ">
+							开抢啦！
+						</div>
+						<div class="sub-title ">
+							零食大礼包
+						</div>
+					</div>
+					<img src="images/act1.png " />
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two sug">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/2.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/1.jpg" /></a>
+			</div>
+
+
+			<div class="am-u-sm-3 am-u-md-2 text-three big">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three sug">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/3.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/4.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three last big ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+		</div>
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f2">
+		<!--坚果-->
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>坚果</h4>
+				<h3>酥酥脆脆，回味无穷</h3>
+				<div class="today-brands ">
+					<a href="# ">腰果</a>
+					<a href="# ">松子</a>
+					<a href="# ">夏威夷果 </a>
+					<a href="# ">碧根果</a>
+					<a href="# ">开心果</a>
+					<a href="# ">核桃仁</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+		<div class="am-g am-g-fixed floodThree ">
+			<div class="am-u-sm-4 text-four list">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<img src="images/act1.png " />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+					</div>
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+			<div class="am-u-sm-4 text-four">
+				<a href="# ">
+					<img src="images/6.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-4 text-four sug">
+				<a href="# ">
+					<img src="images/7.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+			<div class="am-u-sm-6 am-u-md-3 text-five big ">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five ">
+				<a href="# ">
+					<img src="images/8.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five sug">
+				<a href="# ">
+					<img src="images/9.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five big">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f3">
+		<!--甜点-->
+
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>甜品</h4>
+				<h3>每一道甜品都有一个故事</h3>
+				<div class="today-brands ">
+					<a href="# ">桂花糕</a>
+					<a href="# ">奶皮酥</a>
+					<a href="# ">栗子糕 </a>
+					<a href="# ">马卡龙</a>
+					<a href="# ">铜锣烧</a>
+					<a href="# ">豌豆黄</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+
+		<div class="am-g am-g-fixed floodFour">
+			<div class="am-u-sm-5 am-u-md-4 text-one list ">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<div class="outer-con ">
+						<div class="title ">
+							开抢啦！
+						</div>
+						<div class="sub-title ">
+							零食大礼包
+						</div>
+					</div>
+					<img src="images/act1.png " />
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two sug">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/2.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/1.jpg" /></a>
+			</div>
+
+
+			<div class="am-u-sm-3 am-u-md-2 text-three big">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three sug">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/3.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/4.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three last big ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+		</div>
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f4">
+		<!--坚果-->
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>坚果</h4>
+				<h3>酥酥脆脆，回味无穷</h3>
+				<div class="today-brands ">
+					<a href="# ">腰果</a>
+					<a href="# ">松子</a>
+					<a href="# ">夏威夷果 </a>
+					<a href="# ">碧根果</a>
+					<a href="# ">开心果</a>
+					<a href="# ">核桃仁</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+		<div class="am-g am-g-fixed floodThree ">
+			<div class="am-u-sm-4 text-four list">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<img src="images/act1.png " />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+					</div>
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+			<div class="am-u-sm-4 text-four">
+				<a href="# ">
+					<img src="images/6.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-4 text-four sug">
+				<a href="# ">
+					<img src="images/7.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+			<div class="am-u-sm-6 am-u-md-3 text-five big ">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five ">
+				<a href="# ">
+					<img src="images/8.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five sug">
+				<a href="# ">
+					<img src="images/9.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five big">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f5">
+		<!--甜点-->
+
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>甜品</h4>
+				<h3>每一道甜品都有一个故事</h3>
+				<div class="today-brands ">
+					<a href="# ">桂花糕</a>
+					<a href="# ">奶皮酥</a>
+					<a href="# ">栗子糕 </a>
+					<a href="# ">马卡龙</a>
+					<a href="# ">铜锣烧</a>
+					<a href="# ">豌豆黄</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+
+		<div class="am-g am-g-fixed floodFour">
+			<div class="am-u-sm-5 am-u-md-4 text-one list ">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<div class="outer-con ">
+						<div class="title ">
+							开抢啦！
+						</div>
+						<div class="sub-title ">
+							零食大礼包
+						</div>
+					</div>
+					<img src="images/act1.png " />
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two sug">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/2.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/1.jpg" /></a>
+			</div>
+
+
+			<div class="am-u-sm-3 am-u-md-2 text-three big">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three sug">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/3.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/4.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three last big ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+		</div>
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f6">
+		<!--坚果-->
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>坚果</h4>
+				<h3>酥酥脆脆，回味无穷</h3>
+				<div class="today-brands ">
+					<a href="# ">腰果</a>
+					<a href="# ">松子</a>
+					<a href="# ">夏威夷果 </a>
+					<a href="# ">碧根果</a>
+					<a href="# ">开心果</a>
+					<a href="# ">核桃仁</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+		<div class="am-g am-g-fixed floodThree ">
+			<div class="am-u-sm-4 text-four list">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<img src="images/act1.png " />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+					</div>
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+			<div class="am-u-sm-4 text-four">
+				<a href="# ">
+					<img src="images/6.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-4 text-four sug">
+				<a href="# ">
+					<img src="images/7.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+			<div class="am-u-sm-6 am-u-md-3 text-five big ">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five ">
+				<a href="# ">
+					<img src="images/8.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five sug">
+				<a href="# ">
+					<img src="images/9.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five big">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="clear "></div>
+	</div>
+
+
+
+	<div id="f7">
+		<!--甜点-->
+
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>甜品</h4>
+				<h3>每一道甜品都有一个故事</h3>
+				<div class="today-brands ">
+					<a href="# ">桂花糕</a>
+					<a href="# ">奶皮酥</a>
+					<a href="# ">栗子糕 </a>
+					<a href="# ">马卡龙</a>
+					<a href="# ">铜锣烧</a>
+					<a href="# ">豌豆黄</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+
+		<div class="am-g am-g-fixed floodFour">
+			<div class="am-u-sm-5 am-u-md-4 text-one list ">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<div class="outer-con ">
+						<div class="title ">
+							开抢啦！
+						</div>
+						<div class="sub-title ">
+							零食大礼包
+						</div>
+					</div>
+					<img src="images/act1.png " />
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two sug">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/2.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/1.jpg" /></a>
+			</div>
+
+
+			<div class="am-u-sm-3 am-u-md-2 text-three big">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three sug">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/3.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/4.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three last big ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+		</div>
+		<div class="clear "></div>
+	</div>
+
+	<div id="f8">
+		<!--坚果-->
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>坚果</h4>
+				<h3>酥酥脆脆，回味无穷</h3>
+				<div class="today-brands ">
+					<a href="# ">腰果</a>
+					<a href="# ">松子</a>
+					<a href="# ">夏威夷果 </a>
+					<a href="# ">碧根果</a>
+					<a href="# ">开心果</a>
+					<a href="# ">核桃仁</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+		<div class="am-g am-g-fixed floodThree ">
+			<div class="am-u-sm-4 text-four list">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<img src="images/act1.png " />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+					</div>
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+			<div class="am-u-sm-4 text-four">
+				<a href="# ">
+					<img src="images/6.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-4 text-four sug">
+				<a href="# ">
+					<img src="images/7.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+			<div class="am-u-sm-6 am-u-md-3 text-five big ">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five ">
+				<a href="# ">
+					<img src="images/8.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five sug">
+				<a href="# ">
+					<img src="images/9.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five big">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="clear "></div>
+	</div>
+
+	<div id="f9">
+		<!--甜点-->
+
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>甜品</h4>
+				<h3>每一道甜品都有一个故事</h3>
+				<div class="today-brands ">
+					<a href="# ">桂花糕</a>
+					<a href="# ">奶皮酥</a>
+					<a href="# ">栗子糕 </a>
+					<a href="# ">马卡龙</a>
+					<a href="# ">铜锣烧</a>
+					<a href="# ">豌豆黄</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+
+		<div class="am-g am-g-fixed floodFour">
+			<div class="am-u-sm-5 am-u-md-4 text-one list ">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<div class="outer-con ">
+						<div class="title ">
+							开抢啦！
+						</div>
+						<div class="sub-title ">
+							零食大礼包
+						</div>
+					</div>
+					<img src="images/act1.png " />
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two sug">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/2.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-7 am-u-md-4 text-two">
+				<div class="outer-con ">
+					<div class="title ">
+						雪之恋和风大福
+					</div>
+					<div class="sub-title ">
+						¥13.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/1.jpg" /></a>
+			</div>
+
+
+			<div class="am-u-sm-3 am-u-md-2 text-three big">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three sug">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/3.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/4.jpg" /></a>
+			</div>
+
+			<div class="am-u-sm-3 am-u-md-2 text-three last big ">
+				<div class="outer-con ">
+					<div class="title ">
+						小优布丁
+					</div>
+					<div class="sub-title ">
+						¥4.8
+					</div>
+					<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+				</div>
+				<a href="# "><img src="images/5.jpg" /></a>
+			</div>
+
+		</div>
+		<div class="clear "></div>
+	</div>
+
+
+	<div id="f10">
+		<!--坚果-->
+		<div class="am-container ">
+			<div class="shopTitle ">
+				<h4>坚果</h4>
+				<h3>酥酥脆脆，回味无穷</h3>
+				<div class="today-brands ">
+					<a href="# ">腰果</a>
+					<a href="# ">松子</a>
+					<a href="# ">夏威夷果 </a>
+					<a href="# ">碧根果</a>
+					<a href="# ">开心果</a>
+					<a href="# ">核桃仁</a>
+				</div>
+				<span class="more ">
+                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+			</div>
+		</div>
+		<div class="am-g am-g-fixed floodThree ">
+			<div class="am-u-sm-4 text-four list">
+				<div class="word">
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+					<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>
+				</div>
+				<a href="# ">
+					<img src="images/act1.png " />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+					</div>
+				</a>
+				<div class="triangle-topright"></div>
+			</div>
+			<div class="am-u-sm-4 text-four">
+				<a href="# ">
+					<img src="images/6.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-4 text-four sug">
+				<a href="# ">
+					<img src="images/7.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+			<div class="am-u-sm-6 am-u-md-3 text-five big ">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five ">
+				<a href="# ">
+					<img src="images/8.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five sug">
+				<a href="# ">
+					<img src="images/9.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+			<div class="am-u-sm-6 am-u-md-3 text-five big">
+				<a href="# ">
+					<img src="images/10.jpg" />
+					<div class="outer-con ">
+						<div class="title ">
+							雪之恋和风大福
+						</div>
+						<div class="sub-title ">
+							¥13.8
+						</div>
+						<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="clear "></div>
+	</div>
+
+
+
+	<div class="footer ">
+		<div class="footer-hd ">
+			<p>
+				<a href="# ">恒望科技</a>
+				<b>|</b>
+				<a href="# ">商城首页</a>
+				<b>|</b>
+				<a href="# ">支付宝</a>
+				<b>|</b>
+				<a href="# ">物流</a>
+			</p>
+		</div>
+		<div class="footer-bd ">
+			<p>
+				<a href="# ">关于恒望</a>
+				<a href="# ">合作伙伴</a>
+				<a href="# ">联系我们</a>
+				<a href="# ">网站地图</a>
+				<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+			</p>
+		</div>
+	</div>
+
+</div>
+</div>
+<!--引导 -->
+<div class="navCir">
+	<li class="active"><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
+	<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
+	<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+	<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>
+</div>
+
+
+<!--菜单 -->
+<div class=tip>
+	<div id="sidebar">
+		<div id="wrap">
+			<div id="prof" class="item ">
+				<a href="# ">
+					<span class="setting "></span>
+				</a>
+				<div class="ibar_login_box status_login ">
+					<div class="avatar_box ">
+						<p class="avatar_imgbox "><img src="images/no-img_mid_.jpg " /></p>
+						<ul class="user_info ">
+							<li>用户名sl1903</li>
+							<li>级&nbsp;别普通会员</li>
+						</ul>
+					</div>
+					<div class="login_btnbox ">
+						<a href="# " class="login_order ">我的订单</a>
+						<a href="# " class="login_favorite ">我的收藏</a>
+					</div>
+					<i class="icon_arrow_white "></i>
+				</div>
+
+			</div>
+			<div id="shopCart " class="item ">
+				<a href="# ">
+					<span class="message "></span>
+				</a>
+				<p>
+					购物车
+				</p>
+				<p class="cart_num ">0</p>
+			</div>
+			<div id="asset " class="item ">
+				<a href="# ">
+					<span class="view "></span>
+				</a>
+				<div class="mp_tooltip ">
+					我的资产
+					<i class="icon_arrow_right_black "></i>
+				</div>
+			</div>
+
+			<div id="foot " class="item ">
+				<a href="# ">
+					<span class="zuji "></span>
+				</a>
+				<div class="mp_tooltip ">
+					我的足迹
+					<i class="icon_arrow_right_black "></i>
+				</div>
+			</div>
+
+			<div id="brand " class="item ">
+				<a href="#">
+					<span class="wdsc "><img src="images/wdsc.png " /></span>
+				</a>
+				<div class="mp_tooltip ">
+					我的收藏
+					<i class="icon_arrow_right_black "></i>
+				</div>
+			</div>
+
+			<div id="broadcast " class="item ">
+				<a href="# ">
+					<span class="chongzhi "><img src="images/chongzhi.png " /></span>
+				</a>
+				<div class="mp_tooltip ">
+					我要充值
+					<i class="icon_arrow_right_black "></i>
+				</div>
+			</div>
+
+			<div class="quick_toggle ">
+				<li class="qtitem ">
+					<a href="# "><span class="kfzx "></span></a>
+					<div class="mp_tooltip ">客服中心<i class="icon_arrow_right_black "></i></div>
+				</li>
+				<!--二维码 -->
+				<li class="qtitem ">
+					<a href="#none "><span class="mpbtn_qrcode "></span></a>
+					<div class="mp_qrcode " style="display:none; "><img src="images/weixin_code_145.png " /><i class="icon_arrow_white "></i></div>
+				</li>
+				<li class="qtitem ">
+					<a href="#top " class="return_top "><span class="top "></span></a>
+				</li>
+			</div>
+
+			<!--回到顶部 -->
+			<div id="quick_links_pop " class="quick_links_pop hide "></div>
+
+		</div>
+
+	</div>
+	<div id="prof-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			我
+		</div>
+	</div>
+	<div id="shopCart-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			购物车
+		</div>
+	</div>
+	<div id="asset-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			资产
+		</div>
+
+		<div class="ia-head-list ">
+			<a href="# " target="_blank " class="pl ">
+				<div class="num ">0</div>
+				<div class="text ">优惠券</div>
+			</a>
+			<a href="# " target="_blank " class="pl ">
+				<div class="num ">0</div>
+				<div class="text ">红包</div>
+			</a>
+			<a href="# " target="_blank " class="pl money ">
+				<div class="num ">￥0</div>
+				<div class="text ">余额</div>
+			</a>
+		</div>
+
+	</div>
+	<div id="foot-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			足迹
+		</div>
+	</div>
+	<div id="brand-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			收藏
+		</div>
+	</div>
+	<div id="broadcast-content " class="nav-content ">
+		<div class="nav-con-close ">
+			<i class="am-icon-angle-right am-icon-fw "></i>
+		</div>
+		<div>
+			充值
+		</div>
+	</div>
+</div>
+<script>
+    window.jQuery || document.write('<script src="js/basic/js/jquery.min.js "><\/script>');
+</script>
+<script type="text/javascript " src="js/basic/js/quick_links.js "></script>
 </body>
+
 </html>
