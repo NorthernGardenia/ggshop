@@ -96,4 +96,24 @@ public class GsUserServiceImpl implements GsUserService {
         }
         return i;
     }
+
+    @Override
+    public GsUser selevByUser(String username, String password) {
+
+        try {
+            //GsUser user = new GsUser();
+            GsUserExample example = new GsUserExample();
+            GsUserExample.Criteria criteria = example.createCriteria();
+            criteria.andUsernameEqualTo(username).andPasswordEqualTo(password);
+
+            List<GsUser> gsUsers = gsUserDao.selectByExample(example);
+            if(gsUsers != null && gsUsers.size()>0){
+                return gsUsers.get(0);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

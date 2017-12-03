@@ -14,4 +14,6 @@ public interface GsUserService {
     int freezeGsUser(List<Long> ids);
 
     int unfreezeGsUser(List<Long> ids);
+
+    GsUser selevByUser(String username,String password);
 }
