@@ -3,7 +3,7 @@
 <mapper namespace="com.qf.ggshop.dao.InventoryCustomMapper" >
 
   <sql id="Base_Column_List" >
-      i.id, i.item_id as itemId, i.sell_num as sellNum, i.item_total as itemTotal, i.gmt_create as gmtCreate, i.gmt_modified as gmtModified
+      i.id, i.item_id as itemId, i.sell_num as sellNum,i.item_num as itemNum, i.item_total as itemTotal, i.gmt_create as gmtCreate, i.gmt_modified as gmtModified
   </sql>
 
   <select id="countInventory" resultType="_int">
@@ -17,4 +17,23 @@
     FROM inventory i
     LIMIT #{page.offset},#{page.rows}
   </select>
+
+  <select id="selectInventoryById" resultType="com.qf.ggshop.pojo.po.Inventory" >
+
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM inventory i
+    where item_id = #{id}
+
+  </select>
+
+  <update id="updateInventory" >
+    update inventory
+    <set>
+      item_num = #{itemNum},
+      item_total = #{itemTotal},
+      gmt_modified = #{gmtModified}
+    </set>
+    WHERE item_id = #{itemId}
+  </update>
 </mapper>

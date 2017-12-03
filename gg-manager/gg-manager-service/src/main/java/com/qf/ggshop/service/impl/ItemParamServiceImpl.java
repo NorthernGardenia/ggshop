@@ -5,6 +5,7 @@ import com.qf.ggshop.common.dto.Result;
 import com.qf.ggshop.dao.ItemParamCustomMapper;
 import com.qf.ggshop.dao.ItemParamMapper;
 import com.qf.ggshop.pojo.po.ItemParam;
+import com.qf.ggshop.pojo.po.ItemParamExample;
 import com.qf.ggshop.pojo.vo.ItemParamCustom;
 import com.qf.ggshop.service.ItemParamService;
 import org.slf4j.Logger;
@@ -27,7 +28,8 @@ public class ItemParamServiceImpl implements ItemParamService {
     
     @Autowired
     private ItemParamMapper  itemParamDao;
-    
+
+
     
     
     @Override
@@ -66,5 +68,26 @@ public class ItemParamServiceImpl implements ItemParamService {
             e.printStackTrace();
         }
         return i;
+    }
+
+    @Override
+    public ItemParam getItemParamByCid(Long cid) {
+        ItemParam itemParam = null;
+        try {
+            //创建查询模板
+            ItemParamExample example = new ItemParamExample();
+            ItemParamExample.Criteria criteria = example.createCriteria();
+            criteria.andItemCatIdEqualTo(cid);
+            //执行查询
+            List<ItemParam> list = itemParamDao.selectByExampleWithBLOBs(example);
+            if(list != null && list.size() > 0){
+                itemParam = list.get(0);
+            }
+
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return itemParam;
     }
 }

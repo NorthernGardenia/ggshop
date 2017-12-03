@@ -10,6 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-service/gg-manager-service.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-service/gg-manager-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/gg-manager/gg-manager-web/gg-manager-web.iml" filepath="$PROJECT_DIR$/gg-manager/gg-manager-web/gg-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/gg-parent/gg-parent.iml" filepath="$PROJECT_DIR$/gg-parent/gg-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-portal-web/gg-portal-web.iml" filepath="$PROJECT_DIR$/gg-portal-web/gg-portal-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-search-web/gg-search-web.iml" filepath="$PROJECT_DIR$/gg-search-web/gg-search-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gg-sso-web/gg-sso-web.iml" filepath="$PROJECT_DIR$/gg-sso-web/gg-sso-web.iml" />
     </modules>
   </component>
 </project>

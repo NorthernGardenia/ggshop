@@ -1,5 +1,6 @@
 package com.qf.ggshop.pojo.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
 public class Inventory {
@@ -7,11 +8,11 @@ public class Inventory {
 
     private Long itemId;
 
-    private Integer sellNum;
+    private String sellNum;
 
-    private Integer itemNum;
+    private String itemNum;
 
-    private Integer itemTotal;
+    private String itemTotal;
 
     private Date gmtCreate;
 
@@ -33,27 +34,27 @@ public class Inventory {
         this.itemId = itemId;
     }
 
-    public Integer getSellNum() {
+    public String getSellNum() {
         return sellNum;
     }
 
-    public void setSellNum(Integer sellNum) {
+    public void setSellNum(String sellNum) {
         this.sellNum = sellNum;
     }
 
-    public Integer getItemNum() {
+    public String getItemNum() {
         return itemNum;
     }
 
-    public void setItemNum(Integer itemNum) {
+    public void setItemNum(String itemNum) {
         this.itemNum = itemNum;
     }
 
-    public Integer getItemTotal() {
+    public String getItemTotal() {
         return itemTotal;
     }
 
-    public void setItemTotal(Integer itemTotal) {
+    public void setItemTotal(String itemTotal) {
         this.itemTotal = itemTotal;
     }
 
@@ -71,5 +72,18 @@ public class Inventory {
 
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "id=" + id +
+                ", itemId=" + itemId +
+                ", sellNum=" + sellNum +
+                ", itemNum=" + itemNum +
+                ", itemTotal=" + itemTotal +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
     }
 }

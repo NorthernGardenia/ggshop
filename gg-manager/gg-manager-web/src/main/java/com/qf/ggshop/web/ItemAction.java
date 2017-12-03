@@ -53,10 +53,11 @@ public class ItemAction {
 
     @ResponseBody
     @RequestMapping("/item")
-    public int saveItem(Item Item,String content){
+    public int saveItem(Item Item,String content,String paramData){
+        System.out.println(paramData);
         int i = 0;
         try {
-             i = itemService.saveItem(Item, content);
+             i = itemService.saveItem(Item, content, paramData);
         }catch (Exception e){
             logger.error(e.getMessage(), e);
             e.printStackTrace();

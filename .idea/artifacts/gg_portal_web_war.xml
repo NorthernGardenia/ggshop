@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gg-portal-web:war">
+    <output-path>$PROJECT_DIR$/gg-portal-web/target</output-path>
+    <root id="archive" name="gg-portal-web.war">
+      <element id="artifact" artifact-name="gg-portal-web:war exploded" />
+    </root>
+  </artifact>
+</component>

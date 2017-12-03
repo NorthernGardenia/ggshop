@@ -12,4 +12,8 @@ public interface InventoryCustomMapper {
     int countInventory();
 
     List<Inventory> listInventoryByPage(Map<String,Object> map);
+
+    Inventory selectInventoryById(Long id);
+
+    int updateInventory(Inventory inventory);
 }
