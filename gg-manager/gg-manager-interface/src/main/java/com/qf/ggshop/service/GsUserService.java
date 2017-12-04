@@ -18,4 +18,6 @@ public interface GsUserService {
     int saveGsUser(GsUser gsUser, String content);
 
     GsUser selevByUser(String username,String password);
+
+    int selectGsUser(GsUser gsUser, String content);
 }

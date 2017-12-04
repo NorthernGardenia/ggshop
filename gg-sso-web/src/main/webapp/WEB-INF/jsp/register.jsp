@@ -39,7 +39,7 @@
 							</ul>
 							<div class="am-tabs-bd">
 								<div class="am-tab-panel am-active">
-									<form method="post">
+									<form action="user/register.do" method="post">
 										
 							   <div class="user-email">
 										<label for="email"><i class="am-icon-envelope-o"></i></label>
@@ -62,7 +62,7 @@
 										</label>
 							  	</div>
 										<div class="am-cf">
-											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="button" name="" onclick="register()" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
 
 								</div>
@@ -94,7 +94,7 @@
 										</label>
 							  	</div>
 										<div class="am-cf">
-											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="button" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
 								
 									<hr>
@@ -132,6 +132,59 @@
 						</div>
 					</div>
 		</div>
-	</body>
 
+	</body>
+	<script>
+        function register() {
+            var email = $("#email").val();
+            var password = $("#password").val();
+            var passwordRepeat=$("#passwordRepeat").val();
+            var user = {"email":email,"password":password};
+            if(email == null || email == ""){
+                alert("请输入邮箱账号");
+                // ("#sp1").html("请输入用户名");
+                return;
+            }
+            if(password == null || password == ""){
+                alert("请输入密码");
+                //("#sp2").html("请输入密码");
+                return;
+            }
+            if(password!=passwordRepeat){
+                alert("两次输入密码不一致");
+                return;
+			}
+            $.ajax({
+                url:'user/register.do',
+                type:'POST',
+                data:user,
+                success:function (data) {
+                    console.log(data);
+                    console.log(data.result);
+                    if(data.result == "success"){
+                        alert("注册成功");
+                        window.location.href="http://localhost:8083/ggshop";
+                    }
+                }
+            })
+        }
+
+        $("#email").blur(function()
+        {
+            var emailValue=$("#email").val();;
+            if (!isEmail(emailValue))
+            {
+                alert("您输入的邮箱有误,请重新核对后再输入!");
+                return false;
+            }
+            return true;
+        }
+        )
+
+
+        function isEmail(str){
+            var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+            return reg.test(str);
+        }
+	</script>
 </html>

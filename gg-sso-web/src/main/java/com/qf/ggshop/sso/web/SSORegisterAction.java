@@ -11,30 +11,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class SSOLogingAction extends BaseAction{
-
+public class SSORegisterAction extends BaseAction{
 
     private static final Logger logger = LoggerFactory.getLogger(SSOLogingAction.class);
 
     @Autowired
     private GsUserService gsUserService;
 
+
     @ResponseBody
-    @RequestMapping("/user/login.do")
-    public Answer login(GsUser user){
-        try{
-            GsUser user1 = gsUserService.selevByUser(user.getUsername(), user.getPassword());
-            // user.getUsername().equals("22");
-           // System.out.print(user.getUsername().equals("2"));
-            if (null != user1) {
+    @RequestMapping("/user/register.do")
+    public Answer saveUser(GsUser gsUser, String content){
+        int i = 0;
+        try {
+            i = gsUserService.saveGsUser(gsUser,content);
+            if (i == 1) {
                 return super.renderAnswer("success");
             }
             return super.renderAnswer("error");
-        }catch(Exception e) {
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
             e.printStackTrace();
-            logger.info(e.getMessage());
-            return super.renderError(e.getMessage());
+            return  super.renderAnswer(e.getMessage());
         }
+    }
+
+    @ResponseBody
+    @RequestMapping("/user/registerSelect.do")
+    public int selectUser(GsUser gsUser, String content){
+        int i = 0;
+        try {
+            i = gsUserService.selectGsUser(gsUser,content);
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
 

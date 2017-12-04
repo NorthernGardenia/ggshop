@@ -139,4 +139,9 @@ public class GsUserServiceImpl implements GsUserService {
         return null;
     }
 
+    @Override
+    public int selectGsUser(GsUser gsUser, String content) {
+        return 0;
+    }
+
 }

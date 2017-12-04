@@ -12,7 +12,7 @@ public class SSOInexAction {
         return "login";
     }
 
-    @RequestMapping("/page/{page}")
+    @RequestMapping("/{page}")
     public String page(@PathVariable("page") String page){
         return page;
     }
